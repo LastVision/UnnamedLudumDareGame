@@ -46,3 +46,11 @@ sysinfo.txt
 
 # Crashlytics generated file
 crashlytics-build.properties
+Assets/Scenes/TestLevel.unity
+Assets/Scenes/TestLevel.unity.meta
+
+#Ignore all .meta file
+*.meta
+#But not source file with postfix. which is everything but a folder
+!*.*.meta
+Assets/Scenes/TestLevel.unity.meta
