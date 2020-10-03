@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class FPSMovement : MonoBehaviour
 {
-	public float minX = -60f;
-	public float maxX = 60f;
-	public float speed = 15f;
+    //public
+	public Camera cam;
+	public float speed = 10f;
     public float jumpForce = 1f;
 	public float sensitivity;
-    private float ScaleSensitivity = 50;
-	public Camera cam;
 
-	float rotY = 0f;
-	float rotX = 0f;
+    //private
+    private float sensitivityScale = 10f;
+    private bool isGrounded = true;
+
+
+    //Methods
 	void Start()
 	{
 		Cursor.lockState = CursorLockMode.Locked;
@@ -22,15 +24,28 @@ public class FPSMovement : MonoBehaviour
 
     void Update()
     {
-		rotY += Input.GetAxis("Mouse X") * sensitivity * ScaleSensitivity * Time.deltaTime;
-		rotX += Input.GetAxis("Mouse Y") * sensitivity * ScaleSensitivity * cam.aspect * Time.deltaTime;
 
-		transform.localEulerAngles = new Vector3(0, rotY, 0);
-		cam.transform.localEulerAngles = new Vector3(-rotX, rotY, 0);
+        float mouseX = Input.GetAxis("Mouse X") * sensitivity * sensitivityScale * Time.deltaTime;
+        float mouseY = -Input.GetAxis("Mouse Y") * sensitivity * sensitivityScale * Time.deltaTime;
 
-        var move = (transform.forward * Input.GetAxis("Vertical") + transform.right * Input.GetAxis("Horizontal")).normalized;
-        transform.Translate(move * speed * Time.deltaTime);
+        transform.Rotate(Vector3.up * mouseX);
+        if (cam.transform.localEulerAngles.x + mouseY < 90f || cam.transform.localEulerAngles.x + mouseY > 270f)
+        {
+            cam.transform.Rotate(Vector3.right * mouseY);
+        }
 
+        var forwardDir = Vector3.ProjectOnPlane(cam.transform.forward, Vector3.up).normalized;
+        var move = (forwardDir * Input.GetAxis("Vertical") + cam.transform.right * Input.GetAxis("Horizontal")).normalized;
+        transform.Translate(move * speed * Time.deltaTime, Space.World);
+
+        if (Input.GetButton("Jump") && isGrounded)
+        {
+            GetComponent<Rigidbody>().AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            isGrounded = false;
+        }
+        
+
+        // Cursor code
 		if (Input.GetKeyDown(KeyCode.Escape))
 		{
 			Cursor.lockState = CursorLockMode.None;
@@ -42,19 +57,10 @@ public class FPSMovement : MonoBehaviour
 			Cursor.lockState = CursorLockMode.Locked;
 			Cursor.visible = false;
 		}
-
-        if (Input.GetButton("Jump"))
-        {
-        }
-
-        bool isGrounded = false;
-
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
-        {
-            var rb = GetComponent<Rigidbody>();
-            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-            isGrounded = false;
-        }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        isGrounded = true;
+    }
 }
