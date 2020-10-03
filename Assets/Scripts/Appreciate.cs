@@ -6,6 +6,8 @@ public class Appreciate : MonoBehaviour
 {
     public List<AudioClip> AppreciateAudioClips = new List<AudioClip>();
     private int myLastPlayedAppreciateIndex = 0;
+    private float myAppreciatingCooldownTimer = 0.0f;
+    private float myAppreciateCooldown = 1.5f;
     // Start is called before the first frame update
 
     void Start()
@@ -16,9 +18,14 @@ public class Appreciate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Appreciate"))
+        if (myAppreciatingCooldownTimer > 0.0f)
+        {
+            myAppreciatingCooldownTimer -= Time.deltaTime;
+        }
+        else if (Input.GetButtonDown("Appreciate"))
         {
             TryToAppreciate();
+            myAppreciatingCooldownTimer = myAppreciateCooldown;
             Debug.Log("Pressed Appreciate");
         }
     }
