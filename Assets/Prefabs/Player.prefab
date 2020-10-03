@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: -6087402103001282817}
   - component: {fileID: 6890718403117099219}
   - component: {fileID: 1101089674}
-  - component: {fileID: 1101089677}
+  - component: {fileID: 940900844}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -165,9 +165,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minX: -60
   maxX: 60
-  speed: 15
+  speed: 9
   jumpForce: 1
-  sensitivity: 5
+  sensitivity: 12
   cam: {fileID: 2144388077}
 --- !u!114 &-6087402103001282817
 MonoBehaviour:
@@ -300,8 +300,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &1101089677
-BoxCollider:
+--- !u!136 &940900844
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -310,6 +310,7 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: -0.75, z: 0}
