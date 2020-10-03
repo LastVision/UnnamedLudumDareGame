@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - UIHand
+  - Enemy
   layers:
   - Default
   - TransparentFX
