@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Mat_Floor
+  m_Name: Mat_WallCorner
   m_Shader: {fileID: -6465566751694194690, guid: b839a93b6c31f5d4997b36336ffc1720, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -19,14 +19,6 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - Texture2D_1982CF4E:
-        m_Texture: {fileID: 2800000, guid: faa8c8d6bfde0b04cb70744beb13a2cf, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_5D975A50:
-        m_Texture: {fileID: 2800000, guid: f627f749b23054f48b74b4b23a58d138, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _BaseMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -56,11 +48,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _albedoTexture:
-        m_Texture: {fileID: 2800000, guid: f627f749b23054f48b74b4b23a58d138, type: 3}
+        m_Texture: {fileID: 2800000, guid: b07406c025b3b4e428369000eadd47f6, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _emissiveTexture:
-        m_Texture: {fileID: 2800000, guid: faa8c8d6bfde0b04cb70744beb13a2cf, type: 3}
+        m_Texture: {fileID: 2800000, guid: 5730d2df98f29764b9cb1f7ff8b33a36, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -86,14 +78,13 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_C92686DB: {r: 1, g: 0.177265, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
-    - _emissiveColor: {r: 1, g: 0.064486556, b: 0, a: 0}
+    - _emissiveColor: {r: 1, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &1314442609074733903
+--- !u!114 &4384800810166762867
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
