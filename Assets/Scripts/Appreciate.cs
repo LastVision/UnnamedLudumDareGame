@@ -4,23 +4,23 @@ using UnityEngine;
 
 public class Appreciate : MonoBehaviour
 {
-    private List<AudioClip> myAppreciateAudioClips = new List<AudioClip>();
-
+    public List<AudioClip> AppreciateAudioClips = new List<AudioClip>();
+    private int myLastPlayedAppreciateIndex = 0;
     // Start is called before the first frame update
 
     void Start()
     {
-        for (int i = 1; i <= 6; i++)
-        {
-            AudioClip clip = (AudioClip)Resources.Load("Sound/Appreciate/" + i.ToString() + ".ogg");
-            myAppreciateAudioClips.Add(clip);
-        }
+
     }
 
     // Update is called once per frame
     void Update()
     {
-    
+        if (Input.GetButtonDown("Appreciate"))
+        {
+            TryToAppreciate();
+            Debug.Log("Pressed Appreciate");
+        }
     }
 
     public void TryToAppreciate()
@@ -49,6 +49,19 @@ public class Appreciate : MonoBehaviour
     private void AppreciateObject(GameObject foundObject)
     {
         AudioSource audioData = gameObject.GetComponent<AudioSource>();
-        audioData.PlayOneShot(myAppreciateAudioClips[Random.Range(0, myAppreciateAudioClips.Count)]);
+        int randomizedIndex = Random.Range(0, AppreciateAudioClips.Count);
+        if (randomizedIndex == myLastPlayedAppreciateIndex) // Make sure we don't get same audio twice
+        {
+            if (randomizedIndex > 0)
+            {
+                randomizedIndex--;
+            }
+            else
+            {
+                randomizedIndex++;
+            }
+        }
+        audioData.PlayOneShot(AppreciateAudioClips[randomizedIndex]);
+        myLastPlayedAppreciateIndex = randomizedIndex;
     }
 }
