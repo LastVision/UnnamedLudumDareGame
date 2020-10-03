@@ -6,7 +6,7 @@ using UnityEngine;
 [System.Serializable]
 public class Weapon_Pistol : Weapon_Base
 {
-    public override void Fire()
+    public override void FireAlgoritm()
     {
         RaycastHit hit;
         int layerMaskAll = ~0;
