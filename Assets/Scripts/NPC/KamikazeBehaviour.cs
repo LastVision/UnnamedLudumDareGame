@@ -7,19 +7,23 @@ public class KamikazeBehaviour : EnemyBehaviour
     [SerializeField]
     public float aggroRadius = 10.0f;
     [SerializeField]
-    public float attackRadius = 1.0f;
+    public float attackRadius = 2.0f;
     [SerializeField]
     public float explosionRadius = 2.0f;
     [SerializeField]
     public float explosionDamage = 1.0f;
     [SerializeField]
     public float movementSpeed = 3.0f;
+    [SerializeField]
+    public GameObject explosionParticleGameObject;
 
     private Vector3 velocity = Vector3.zero;
     private Vector3 targetPoint = Vector3.zero;
     private float idlePointDistance = 5.0f;
+    private ParticleSystem explosionParticle;
     protected override void OnInit()
     {
+        explosionParticle = explosionParticleGameObject.GetComponent<ParticleSystem>();
     }
     protected override void OnUpdateIdleState()
     {
@@ -63,6 +67,12 @@ public class KamikazeBehaviour : EnemyBehaviour
         }
     }
 
+    protected override void OnDeath()
+    {
+        Debug.Log("I AM A DEAD DRONE!");
+        GetComponentInChildren<MeshRenderer>().enabled = false;
+    }
+
     private void MoveToTargetPoint()
     {
         velocity = ((targetPoint - transform.position).normalized) * movementSpeed;
@@ -72,7 +82,15 @@ public class KamikazeBehaviour : EnemyBehaviour
     }
     private void Explode()
     {
-        print("Boom");
+        if(explosionParticle)
+        {
+            explosionParticle.Play();
+            Kill();
+        }
+        else
+        {
+            Debug.Log("Particles didn't work");
+        }
     }
 
     private Vector3 GetRandomPointInRadius(float radius)
