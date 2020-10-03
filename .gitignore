@@ -53,3 +53,4 @@ Assets/Scenes/TestLevel.unity.meta
 *.meta
 #But not source file with postfix. which is everything but a folder
 !*.*.meta
+Assets/Scenes/TestLevel.unity.meta
