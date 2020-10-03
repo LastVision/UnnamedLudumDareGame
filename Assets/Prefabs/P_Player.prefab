@@ -293,6 +293,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 2144388077}
+  jumpAudioClips:
+  - {fileID: 8300000, guid: 9b99fa2f477bb0f489abc18006992041, type: 3}
+  - {fileID: 8300000, guid: 22693ad90603d774da076a49a0edc568, type: 3}
+  - {fileID: 8300000, guid: abb7648b71d29a145a31dfcc0221cbcf, type: 3}
+  - {fileID: 8300000, guid: fa8212989ce6b98499cb3cc8fcfbab11, type: 3}
+  - {fileID: 8300000, guid: 2f9dd95fef0b0e64499daf7c37ee1875, type: 3}
   speed: 9
   jumpForce: 900
   sensitivity: 60
@@ -426,7 +432,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 1
 --- !u!136 &940900844
 CapsuleCollider:
