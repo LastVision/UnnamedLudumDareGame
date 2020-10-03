@@ -18,6 +18,7 @@ public class NewBehaviourScript : MonoBehaviour
         {
             Appreciate appreciateScript = (Appreciate)GameObject.FindWithTag("Player").GetComponent(typeof(Appreciate));
             appreciateScript.TryToAppreciate();
+            Debug.Log("Pressed E");
         }
         if (Input.GetKeyDown("R")) // RESTART - TEST FOR LATER RESET FUNCTION
         {
