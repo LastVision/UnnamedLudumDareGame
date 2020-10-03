@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Appreciate : MonoBehaviour
 {
     public List<AudioClip> AppreciateAudioClips = new List<AudioClip>();
-    public GameObject UIHand = new GameObject();
+    public GameObject UIHand;
     private int myLastPlayedAppreciateIndex = 0;
     private float myAppreciatingCooldownTimer = 0.0f;
     private float myAppreciateCooldown;
