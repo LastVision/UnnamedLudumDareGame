@@ -61,7 +61,6 @@ public class FPSMovement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("grounded");
         isGrounded = true;
     }
 }
