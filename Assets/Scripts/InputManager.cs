@@ -14,6 +14,11 @@ public class NewBehaviourScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown("E")) // APPRECIATE
+        {
+            Appreciate appreciateScript = (Appreciate)GameObject.FindWithTag("Player").GetComponent(typeof(Appreciate));
+            appreciateScript.TryToAppreciate();
+        }
         if (Input.GetKeyDown("R")) // RESTART - TEST FOR LATER RESET FUNCTION
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
