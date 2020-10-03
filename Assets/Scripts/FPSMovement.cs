@@ -6,6 +6,7 @@ public class FPSMovement : MonoBehaviour
 {
     //public
 	public Camera cam;
+    public List<AudioClip> jumpAudioClips = new List<AudioClip>();
 	public float speed = 10f;
     public float jumpForce = 1f;
 	public float sensitivity;
@@ -59,6 +60,7 @@ public class FPSMovement : MonoBehaviour
         {
             GetComponent<Rigidbody>().AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isGrounded = false;
+            gameObject.GetComponent<AudioSource>().PlayOneShot(jumpAudioClips[Random.Range(0, jumpAudioClips.Count)]);
         }
         
     }
