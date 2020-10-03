@@ -1,18 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Appreciate : MonoBehaviour
 {
     public List<AudioClip> AppreciateAudioClips = new List<AudioClip>();
+    public GameObject UIHand;
     private int myLastPlayedAppreciateIndex = 0;
     private float myAppreciatingCooldownTimer = 0.0f;
-    private float myAppreciateCooldown = 1.5f;
+    private float myAppreciateCooldown;
     // Start is called before the first frame update
 
     void Start()
     {
-
+        UIHand.GetComponent<RawImage>().enabled = false;
+        myAppreciateCooldown = 1.5f;
     }
 
     // Update is called once per frame
@@ -21,13 +24,16 @@ public class Appreciate : MonoBehaviour
         if (myAppreciatingCooldownTimer > 0.0f)
         {
             myAppreciatingCooldownTimer -= Time.deltaTime;
+            if (myAppreciatingCooldownTimer <= 0.0f)
+            {
+                UIHand.GetComponent<RawImage>().enabled = false;
+            }
         }
         else if (Input.GetButtonDown("Appreciate"))
         {
             TryToAppreciate();
-            myAppreciatingCooldownTimer = myAppreciateCooldown;
-            Debug.Log("Pressed Appreciate");
         }
+
     }
 
     public void TryToAppreciate()
@@ -70,5 +76,10 @@ public class Appreciate : MonoBehaviour
         }
         audioData.PlayOneShot(AppreciateAudioClips[randomizedIndex]);
         myLastPlayedAppreciateIndex = randomizedIndex;
+        myAppreciatingCooldownTimer = myAppreciateCooldown;
+        if (UIHand != null)
+        {
+            UIHand.GetComponent<RawImage>().enabled = true;
+        }
     }
 }
