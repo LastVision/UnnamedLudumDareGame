@@ -302,11 +302,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8337829423014098743, guid: 561ab7dfe276c0342aaa150fe0fb32bc, type: 3}
       propertyPath: movementSpeed
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8337829423014098743, guid: 561ab7dfe276c0342aaa150fe0fb32bc, type: 3}
       propertyPath: aggroRadius
-      value: 30
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 561ab7dfe276c0342aaa150fe0fb32bc, type: 3}
@@ -692,11 +692,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8337829423014098743, guid: 561ab7dfe276c0342aaa150fe0fb32bc, type: 3}
       propertyPath: movementSpeed
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8337829423014098743, guid: 561ab7dfe276c0342aaa150fe0fb32bc, type: 3}
       propertyPath: aggroRadius
-      value: 30
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 561ab7dfe276c0342aaa150fe0fb32bc, type: 3}
@@ -757,11 +757,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8337829423014098743, guid: 561ab7dfe276c0342aaa150fe0fb32bc, type: 3}
       propertyPath: movementSpeed
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8337829423014098743, guid: 561ab7dfe276c0342aaa150fe0fb32bc, type: 3}
       propertyPath: aggroRadius
-      value: 30
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 561ab7dfe276c0342aaa150fe0fb32bc, type: 3}
@@ -1167,11 +1167,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8337829423014098743, guid: 561ab7dfe276c0342aaa150fe0fb32bc, type: 3}
       propertyPath: movementSpeed
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8337829423014098743, guid: 561ab7dfe276c0342aaa150fe0fb32bc, type: 3}
       propertyPath: aggroRadius
-      value: 30
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 561ab7dfe276c0342aaa150fe0fb32bc, type: 3}
@@ -1522,11 +1522,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8337829423014098743, guid: 561ab7dfe276c0342aaa150fe0fb32bc, type: 3}
       propertyPath: movementSpeed
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8337829423014098743, guid: 561ab7dfe276c0342aaa150fe0fb32bc, type: 3}
       propertyPath: aggroRadius
-      value: 30
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 561ab7dfe276c0342aaa150fe0fb32bc, type: 3}
@@ -2562,11 +2562,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8337829423014098743, guid: 561ab7dfe276c0342aaa150fe0fb32bc, type: 3}
       propertyPath: movementSpeed
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8337829423014098743, guid: 561ab7dfe276c0342aaa150fe0fb32bc, type: 3}
       propertyPath: aggroRadius
-      value: 30
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 561ab7dfe276c0342aaa150fe0fb32bc, type: 3}
@@ -2813,11 +2813,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8337829423014098743, guid: 561ab7dfe276c0342aaa150fe0fb32bc, type: 3}
       propertyPath: movementSpeed
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8337829423014098743, guid: 561ab7dfe276c0342aaa150fe0fb32bc, type: 3}
       propertyPath: aggroRadius
-      value: 30
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 561ab7dfe276c0342aaa150fe0fb32bc, type: 3}
