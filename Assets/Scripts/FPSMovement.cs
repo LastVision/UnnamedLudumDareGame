@@ -22,7 +22,7 @@ public class FPSMovement : MonoBehaviour
 		Cursor.visible = false;
 	}
 
-    void Update()
+    void FixedUpdate()
     {
 
         float mouseX = Input.GetAxis("Mouse X") * sensitivity * sensitivityScale * Time.deltaTime;
@@ -38,12 +38,6 @@ public class FPSMovement : MonoBehaviour
         var move = (forwardDir * Input.GetAxis("Vertical") + cam.transform.right * Input.GetAxis("Horizontal")).normalized;
         transform.Translate(move * speed * Time.deltaTime, Space.World);
 
-        if (Input.GetButtonDown("Jump") && isGrounded)
-        {
-            GetComponent<Rigidbody>().AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-            isGrounded = false;
-        }
-        
 
         // Cursor code
 		if (Input.GetKeyDown(KeyCode.Escape))
@@ -59,8 +53,18 @@ public class FPSMovement : MonoBehaviour
 		}
     }
 
+    void Update()
+    {
+        if (Input.GetButtonDown("Jump") && isGrounded)
+        {
+            GetComponent<Rigidbody>().AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            isGrounded = false;
+        }
+        
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        isGrounded = true;
+        isGrounded = true;;
     }
 }
