@@ -74,25 +74,26 @@ public class EnemyBehaviour : MonoBehaviour
         }
     }
 
-    protected float GetDistanceBetweenMeAndPlayer()
+    protected float GetPlayerDist()
     {
         float distance = 0.0f;
 
-        Vector2 playerPos = GetPlayerCoordinate();
-        Vector2 pos = new Vector2(transform.position.x, transform.position.y);
+        Vector3 playerPos = GetPlayerCoordinate();
+        Vector3 pos = transform.position;
 
-        distance = Vector2.Distance(pos, playerPos);
+        distance = Vector3.Distance(pos, playerPos);
 
         return distance;
     }
-    protected Vector2 GetPlayerCoordinate()
+    protected Vector3 GetPlayerCoordinate()
     {
-        Vector2 playerCoord = Vector2.zero;
+        Vector3 playerCoord = Vector3.zero;
 
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if(player)
         {
-            playerCoord = new Vector2(player.transform.position.x, player.transform.position.z);
+            playerCoord = player.transform.position;
+            playerCoord.y -= 1.5f;
         }
 
         return playerCoord;
