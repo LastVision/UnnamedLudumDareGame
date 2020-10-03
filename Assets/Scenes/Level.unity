@@ -11179,7 +11179,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2198122767007691387, guid: 561ab7dfe276c0342aaa150fe0fb32bc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.00000023841858
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2198122767007691387, guid: 561ab7dfe276c0342aaa150fe0fb32bc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11670,41 +11670,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1101089674, guid: 3d269b14b6ed68c4e8149b3ecb5f838d, type: 3}
-      propertyPath: m_Constraints
-      value: 112
-      objectReference: {fileID: 0}
-    - target: {fileID: 880086639912909465, guid: 3d269b14b6ed68c4e8149b3ecb5f838d, type: 3}
-      propertyPath: jumpAudioClips.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 880086639912909465, guid: 3d269b14b6ed68c4e8149b3ecb5f838d, type: 3}
-      propertyPath: jumpAudioClips.Array.data[0]
+    - target: {fileID: -6087402103001282817, guid: 3d269b14b6ed68c4e8149b3ecb5f838d, type: 3}
+      propertyPath: UIHand
       value: 
-      objectReference: {fileID: 8300000, guid: 9b99fa2f477bb0f489abc18006992041, type: 3}
-    - target: {fileID: 880086639912909465, guid: 3d269b14b6ed68c4e8149b3ecb5f838d, type: 3}
-      propertyPath: jumpAudioClips.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: 22693ad90603d774da076a49a0edc568, type: 3}
-    - target: {fileID: 880086639912909465, guid: 3d269b14b6ed68c4e8149b3ecb5f838d, type: 3}
-      propertyPath: jumpAudioClips.Array.data[2]
-      value: 
-      objectReference: {fileID: 8300000, guid: abb7648b71d29a145a31dfcc0221cbcf, type: 3}
-    - target: {fileID: 880086639912909465, guid: 3d269b14b6ed68c4e8149b3ecb5f838d, type: 3}
-      propertyPath: jumpAudioClips.Array.data[3]
-      value: 
-      objectReference: {fileID: 8300000, guid: fa8212989ce6b98499cb3cc8fcfbab11, type: 3}
-    - target: {fileID: 880086639912909465, guid: 3d269b14b6ed68c4e8149b3ecb5f838d, type: 3}
-      propertyPath: jumpAudioClips.Array.data[4]
-      value: 
-      objectReference: {fileID: 8300000, guid: 2f9dd95fef0b0e64499daf7c37ee1875, type: 3}
-    - target: {fileID: 1360021338890488816, guid: 3d269b14b6ed68c4e8149b3ecb5f838d, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1895874468}
     - target: {fileID: 3540577801717609228, guid: 3d269b14b6ed68c4e8149b3ecb5f838d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 3540577801717609228, guid: 3d269b14b6ed68c4e8149b3ecb5f838d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.81
       objectReference: {fileID: 0}
     - target: {fileID: 3540577801717609228, guid: 3d269b14b6ed68c4e8149b3ecb5f838d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11727,19 +11703,15 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3540577801717609228, guid: 3d269b14b6ed68c4e8149b3ecb5f838d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3540577801717609228, guid: 3d269b14b6ed68c4e8149b3ecb5f838d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.81
-      objectReference: {fileID: 0}
-    - target: {fileID: 3540577801717609228, guid: 3d269b14b6ed68c4e8149b3ecb5f838d, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3540577801717609228, guid: 3d269b14b6ed68c4e8149b3ecb5f838d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3540577801717609228, guid: 3d269b14b6ed68c4e8149b3ecb5f838d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3540577801717609228, guid: 3d269b14b6ed68c4e8149b3ecb5f838d, type: 3}

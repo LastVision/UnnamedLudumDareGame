@@ -476,3 +476,4 @@ MonoBehaviour:
   WeaponPrefabs:
   - {fileID: 8378145608495001647, guid: fd8161a459eadcc43b49558539d46a18, type: 3}
   - {fileID: 7062711845339430396, guid: a4e09d934b3c64544a969c818b08c1fc, type: 3}
+  - {fileID: 8877970109254394403, guid: a2c2a6da17a0ed24193b617f82c13ac1, type: 3}

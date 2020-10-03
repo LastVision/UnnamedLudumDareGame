@@ -20,8 +20,7 @@ public class Weapon_Pistol : Weapon_Base
             {
                 enemy.Kill();
             }
-            
-            Debug.Log("Did Hit");
+        
         }
         
         Vector3 dir = (hit.point - Camera.main.transform.position).normalized;
