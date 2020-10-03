@@ -2,13 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum EWeapons
-{
-    Pistol,
-    Shotgun,
-    RocketLauncher
-}
-
 public class WeildingGun : MonoBehaviour
 {
 
@@ -96,7 +89,7 @@ public class WeildingGun : MonoBehaviour
             if (Weapon.CurrentAmmo > 0)
             {
                 Weapon.Fire();
-                 Debug.Log("Ammo left: " + Weapon.CurrentAmmo);
+                Debug.Log("Ammo left: " + Weapon.CurrentAmmo);
             }
         }
 
