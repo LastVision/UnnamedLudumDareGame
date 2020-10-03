@@ -2,13 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum EWeapons
-{
-    Pistol,
-    Shotgun,
-    RocketLauncher
-}
-
 public class WeildingGun : MonoBehaviour
 {
 
@@ -49,7 +42,6 @@ public class WeildingGun : MonoBehaviour
             currentWeapon.SetActive(true);
 
             currentWeaponIndex = weaponIndex;
-            Debug.Log(currentWeaponIndex);
         }
     }
 
@@ -85,14 +77,19 @@ public class WeildingGun : MonoBehaviour
         {
             return;
         }
+        Weapon_Base Weapon = currentWeapon.GetComponent<Weapon_Base>();
 
         if (Input.GetButtonDown("Reload"))
         {
-            currentWeapon.GetComponent<Weapon_Base>().Reload();
+            Weapon.Reload();
         }
         if (Input.GetButtonDown("Fire1"))
         {
-            currentWeapon.GetComponent<Weapon_Base>().Fire();
+            if (Weapon.CurrentAmmo > 0)
+            {
+                Weapon.Fire();
+                Debug.Log("Ammo left: " + Weapon.CurrentAmmo);
+            }
         }
 
         float scrollInput = Input.GetAxis("ChangeWeaponWithScroll");
@@ -104,5 +101,10 @@ public class WeildingGun : MonoBehaviour
         {
             EquipPreviousWeapon();
         }
+    }
+
+    void NoAmmo()
+    {
+        Debug.Log("No Ammo");
     }
 }

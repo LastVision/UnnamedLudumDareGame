@@ -8,14 +8,15 @@ public abstract class Weapon_Base : MonoBehaviour
 {
     //public
     public short MaxAmmo;
-
-    //protected
     public GameObject MuzzlePosition;
     public GameObject HandlePosition;
+    public List<AudioClip> fireSounds = new List<AudioClip>();
+    
+    //protected
     protected short MaxAmmo_internal = 5; //hax to have inherited variable
     
     //private
-    protected short CurrentAmmo = 5;
+    public short CurrentAmmo{get; protected set;}
     
 
     void Start()
@@ -44,9 +45,17 @@ public abstract class Weapon_Base : MonoBehaviour
         return HandlePosition.transform;
     }
 
-    public abstract void Fire();
+    public virtual void Fire()
+    {
+        --CurrentAmmo;
+        FireAlgoritm();
+    }
+
+    public abstract void FireAlgoritm();
+
     public virtual void Reload()
     {
         CurrentAmmo = MaxAmmo_internal;
     }
+
 }

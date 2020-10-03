@@ -301,6 +301,11 @@ MonoBehaviour:
   MaxAmmo: 5
   MuzzlePosition: {fileID: 3559753592693249941}
   HandlePosition: {fileID: 4446641797097396091}
+  fireSounds:
+  - {fileID: 8300000, guid: 2df1a658a71cbec40a0bfc887c80d2eb, type: 3}
+  - {fileID: 8300000, guid: 91cdee04a4c1de94d8b7991d8cd6047c, type: 3}
+  - {fileID: 8300000, guid: 7cfab521409cf86418f3298654126d04, type: 3}
+  - {fileID: 8300000, guid: e9d059fa01a121846a17130ff03bbd5d, type: 3}
 --- !u!1001 &6634552424450987149
 PrefabInstance:
   m_ObjectHideFlags: 0
