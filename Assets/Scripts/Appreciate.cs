@@ -14,6 +14,7 @@ public class Appreciate : MonoBehaviour
 
     void Start()
     {
+        UIHand = GameObject.FindGameObjectsWithTag("UIHand")[0];
         if (UIHand)
         {
             UIHand.GetComponent<RawImage>().enabled = false;
@@ -53,7 +54,7 @@ public class Appreciate : MonoBehaviour
         {
             Vector3 dir = (hit.point - Camera.main.transform.position).normalized;
             Vector3 start = Camera.main.transform.position + Camera.main.transform.up * -0.05f + dir * 0.2f;
-            UtilityFunctions.DrawLine(start, hit.point, Color.yellow, 0.5f);
+            UtilityFunctions.DrawLine(start, hit.point, Color.yellow, 1.5f);
             Debug.Log("Did Hit");
             AppreciateObject(hit.collider.gameObject);
         }
@@ -61,7 +62,7 @@ public class Appreciate : MonoBehaviour
         {
             Vector3 dir = Camera.main.transform.forward;
             Vector3 start = Camera.main.transform.position + Camera.main.transform.up * -0.05f + dir * 0.2f;
-            UtilityFunctions.DrawLine(start, dir * 1000f, Color.white, 0.5f);
+            UtilityFunctions.DrawLine(start, dir * 1000f, Color.white, 1.5f);
             Debug.Log("Did not Hit");
         }
     }

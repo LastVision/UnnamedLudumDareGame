@@ -13,6 +13,8 @@ public class EnemyBehaviour : MonoBehaviour
     protected STATE state = STATE.IDLE;
     protected float stateTime = 0.0f;
 
+    public AudioClip idleSound;
+    public AudioClip aggroSound;
     void Start()
     {
         OnInit();
