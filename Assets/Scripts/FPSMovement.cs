@@ -7,7 +7,7 @@ public class FPSMovement : MonoBehaviour
 	public float minX = -60f;
 	public float maxX = 60f;
 	public float speed = 15f;
-
+    public float jumpForce = 1f;
 	public float sensitivity;
 	public Camera cam;
 
@@ -23,7 +23,7 @@ public class FPSMovement : MonoBehaviour
     {
 		rotY += Input.GetAxis("Mouse X") * sensitivity;
 		rotX += Input.GetAxis("Mouse Y") * sensitivity;
-
+        
 		rotX = Mathf.Clamp(rotX, minX, maxX);
 		transform.localEulerAngles = new Vector3(0, rotY, 0);
 		cam.transform.localEulerAngles = new Vector3(-rotX, rotY, 0);
@@ -43,6 +43,21 @@ public class FPSMovement : MonoBehaviour
 			Cursor.lockState = CursorLockMode.Locked;
 			Cursor.visible = false;
 		}
+
+        if (Input.GetButton("Jump"))
+        {
+            //transform.add
+            Debug.Log("adsf");
+        }
+
+        bool isGrounded = false;
+
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        {
+            var rb = GetComponent<Rigidbody>();
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            isGrounded = false;
+        }
     }
 
 }

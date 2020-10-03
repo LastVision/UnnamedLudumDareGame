@@ -166,9 +166,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af3dba4dc6278234b831ca3cbc07fddf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minX: 360
-  maxX: -360
+  minX: -60
+  maxX: 60
   speed: 15
+  jumpForce: 1
   sensitivity: 5
   cam: {fileID: 4397008146083684631}
 --- !u!114 &-6087402103001282817
