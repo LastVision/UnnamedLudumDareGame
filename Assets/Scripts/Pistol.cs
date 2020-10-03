@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+[System.Serializable]
 public class Pistol : WeaponBase
 {
     public override short MaxAmmo {get; protected set;}
@@ -12,12 +14,18 @@ public class Pistol : WeaponBase
 
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, Mathf.Infinity, layerMaskAll))
         {
-            Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward * hit.distance, Color.yellow);
+            Vector3 dir = (hit.point - Camera.main.transform.position).normalized;
+            Vector3 start = Camera.main.transform.position + Camera.main.transform.up * -0.05f + dir * 0.2f;
+            UtilityFunctions.DrawLine(start, hit.point, Color.green, 0.5f);
+
             Debug.Log("Did Hit");
         }
         else
         {
-            Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward * 1000, Color.red);
+            Vector3 dir = Camera.main.transform.forward;
+            Vector3 start = Camera.main.transform.position + Camera.main.transform.up * -0.05f + dir * 0.2f;
+            UtilityFunctions.DrawLine(start, dir * 1000f, Color.red, 0.5f);
+
             Debug.Log("Did not Hit");
         }
     }
