@@ -9,7 +9,8 @@ public abstract class WeaponBase : MonoBehaviour
     
     public virtual short MaxAmmo {get; protected set;}
     public Mesh model;
-
+    public List<AudioClip> fireSounds = new List<AudioClip>();
+    
     private short CurrentAmmo = 5;
     // Update is called once per frame
     void Start()

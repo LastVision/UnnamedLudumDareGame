@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5386453424685335490}
   - component: {fileID: 4336497560205233324}
   m_Layer: 0
-  m_Name: Pistol
+  m_Name: P_Pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,5 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4a11fb405d8ed43b25ddfc45f8bd6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxAmmo: 5
   model: {fileID: 0}
+  fireSounds:
+  - {fileID: 8300000, guid: 2df1a658a71cbec40a0bfc887c80d2eb, type: 3}
+  - {fileID: 8300000, guid: 91cdee04a4c1de94d8b7991d8cd6047c, type: 3}
+  - {fileID: 8300000, guid: 7cfab521409cf86418f3298654126d04, type: 3}
+  - {fileID: 8300000, guid: e9d059fa01a121846a17130ff03bbd5d, type: 3}
