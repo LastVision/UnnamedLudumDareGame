@@ -184,6 +184,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df3fda33fef01a54fa0a2a5d843e7332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AppreciateAudioClips:
+  - {fileID: 8300000, guid: bf451063b79c0e24abbe8a5ffada8d40, type: 3}
+  - {fileID: 8300000, guid: 9e44f74ac45de1547aacd44f3efa398b, type: 3}
+  - {fileID: 8300000, guid: f6ca70c5e1a4c204aaff1875c222f832, type: 3}
+  - {fileID: 8300000, guid: db1c184fe95120f479c9764f3a06edc9, type: 3}
+  - {fileID: 8300000, guid: c50ba9eca996a6a4c831640bb8edfdb4, type: 3}
+  - {fileID: 8300000, guid: 59326e76b7f9b1c42a82f98190540e80, type: 3}
 --- !u!82 &6890718403117099219
 AudioSource:
   m_ObjectHideFlags: 0
