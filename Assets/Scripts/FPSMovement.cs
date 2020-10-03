@@ -9,6 +9,7 @@ public class FPSMovement : MonoBehaviour
 	public float speed = 15f;
     public float jumpForce = 1f;
 	public float sensitivity;
+    private float ScaleSensitivity = 50;
 	public Camera cam;
 
 	float rotY = 0f;
@@ -21,10 +22,9 @@ public class FPSMovement : MonoBehaviour
 
     void Update()
     {
-		rotY += Input.GetAxis("Mouse X") * sensitivity;
-		rotX += Input.GetAxis("Mouse Y") * sensitivity;
-        
-		rotX = Mathf.Clamp(rotX, minX, maxX);
+		rotY += Input.GetAxis("Mouse X") * sensitivity * ScaleSensitivity * Time.deltaTime;
+		rotX += Input.GetAxis("Mouse Y") * sensitivity * ScaleSensitivity * cam.aspect * Time.deltaTime;
+
 		transform.localEulerAngles = new Vector3(0, rotY, 0);
 		cam.transform.localEulerAngles = new Vector3(-rotX, rotY, 0);
 
@@ -33,7 +33,6 @@ public class FPSMovement : MonoBehaviour
 
 		if (Input.GetKeyDown(KeyCode.Escape))
 		{
-        	//Mistake happened here vvvv
 			Cursor.lockState = CursorLockMode.None;
 			Cursor.visible = true;
 		}
@@ -46,8 +45,6 @@ public class FPSMovement : MonoBehaviour
 
         if (Input.GetButton("Jump"))
         {
-            //transform.add
-            Debug.Log("adsf");
         }
 
         bool isGrounded = false;
