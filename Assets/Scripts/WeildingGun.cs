@@ -2,10 +2,82 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum EWeapons
+{
+    Pistol,
+    Shotgun,
+    RocketLauncher
+}
+
 public class WeildingGun : MonoBehaviour
 {
 
-    public WeaponBase currentWeapon;
+    private GameObject currentWeapon;
+    private int currentWeaponIndex;
+    public List<GameObject> WeaponPrefabs;
+    protected List<GameObject> Weapons = new List<GameObject>();
+
+    void Start()
+    {
+        if (WeaponPrefabs.Count > 0)
+        {
+            foreach(GameObject prefab in WeaponPrefabs)
+            {
+                GameObject newWeapon = Instantiate(prefab, new Vector3(0, 0, 0), Quaternion.identity);
+
+                Transform handleTransform = newWeapon.GetComponent<Weapon_Base>().GetHandleTransform();
+                var handPosition = Camera.main.transform.Find("HandPosition");
+                newWeapon.transform.SetParent(handPosition);
+                newWeapon.transform.localPosition = -handleTransform.localPosition;
+                newWeapon.transform.localRotation = Quaternion.Inverse(handleTransform.localRotation);
+                newWeapon.SetActive(false);
+                Weapons.Add(newWeapon);
+            }
+            EquipWeapon(0);
+        }
+    }
+
+    void EquipWeapon(int weaponIndex)
+    {
+        if (weaponIndex >= 0 && weaponIndex < Weapons.Count)
+        {
+            if (currentWeapon)
+            {
+                currentWeapon.SetActive(false);
+            }
+            currentWeapon = Weapons[weaponIndex];
+            currentWeapon.SetActive(true);
+
+            currentWeaponIndex = weaponIndex;
+            Debug.Log(currentWeaponIndex);
+        }
+    }
+
+    void EquipNextWeapon()
+    {
+        int weaponIndex = currentWeaponIndex + 1;
+        if (weaponIndex < Weapons.Count)
+        {
+            EquipWeapon(weaponIndex);
+        }
+        else
+        {
+            EquipWeapon(0);
+        }
+    }
+
+    void EquipPreviousWeapon()
+    {
+        int weaponIndex = currentWeaponIndex - 1;
+        if (weaponIndex >= 0)
+        {
+            EquipWeapon(weaponIndex);
+        }
+        else
+        {
+            EquipWeapon(Weapons.Count - 1);
+        }
+    }
 
     void Update()
     {
@@ -13,14 +85,24 @@ public class WeildingGun : MonoBehaviour
         {
             return;
         }
-        
+
         if (Input.GetButtonDown("Reload"))
         {
-            currentWeapon.Reload();
+            currentWeapon.GetComponent<Weapon_Base>().Reload();
         }
         if (Input.GetButtonDown("Fire1"))
         {
-            currentWeapon.Fire();
+            currentWeapon.GetComponent<Weapon_Base>().Fire();
+        }
+
+        float scrollInput = Input.GetAxis("ChangeWeaponWithScroll");
+        if (scrollInput > 0f)
+        {
+            EquipNextWeapon();
+        }
+        if (scrollInput < 0f)
+        {
+            EquipPreviousWeapon();
         }
     }
 }

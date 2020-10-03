@@ -4,9 +4,8 @@ using UnityEngine;
 
 
 [System.Serializable]
-public class Pistol : WeaponBase
+public class Weapon_Pistol : Weapon_Base
 {
-    public override short MaxAmmo {get; protected set;}
     public override void Fire()
     {
         RaycastHit hit;
