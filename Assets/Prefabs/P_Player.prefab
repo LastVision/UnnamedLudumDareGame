@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 3219621028145578751}
   - component: {fileID: 1360021338890488816}
   m_Layer: 0
-  m_Name: Player
+  m_Name: P_Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -188,6 +188,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: db1c184fe95120f479c9764f3a06edc9, type: 3}
   - {fileID: 8300000, guid: c50ba9eca996a6a4c831640bb8edfdb4, type: 3}
   - {fileID: 8300000, guid: 59326e76b7f9b1c42a82f98190540e80, type: 3}
+  UIHand: {fileID: 0}
 --- !u!82 &6890718403117099219
 AudioSource:
   m_ObjectHideFlags: 0
@@ -325,7 +326,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.1, z: 1}
+  m_Size: {x: 0.2, y: 0.1, z: 0.2}
   m_Center: {x: 0, y: -1.7, z: 0}
 --- !u!114 &1360021338890488816
 MonoBehaviour:
@@ -339,4 +340,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f94d6f21ae7e03479abb368840282b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentWeapon: {fileID: 0}
+  currentWeapon: {fileID: 4336497560205233324, guid: fd8161a459eadcc43b49558539d46a18, type: 3}
