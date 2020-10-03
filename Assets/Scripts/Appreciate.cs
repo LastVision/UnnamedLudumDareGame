@@ -49,15 +49,19 @@ public class Appreciate : MonoBehaviour
         layerMask = ~layerMask;
 
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask))
+        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, Mathf.Infinity, layerMask))
         {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
+            Vector3 dir = (hit.point - Camera.main.transform.position).normalized;
+            Vector3 start = Camera.main.transform.position + Camera.main.transform.up * -0.05f + dir * 0.2f;
+            UtilityFunctions.DrawLine(start, hit.point, Color.yellow, 0.5f);
             Debug.Log("Did Hit");
             AppreciateObject(hit.collider.gameObject);
         }
         else
         {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white);
+            Vector3 dir = Camera.main.transform.forward;
+            Vector3 start = Camera.main.transform.position + Camera.main.transform.up * -0.05f + dir * 0.2f;
+            UtilityFunctions.DrawLine(start, dir * 1000f, Color.white, 0.5f);
             Debug.Log("Did not Hit");
         }
     }

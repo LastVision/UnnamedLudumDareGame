@@ -15,6 +15,7 @@ public abstract class Weapon_Base : MonoBehaviour
     public GameObject MuzzlePosition;
     public GameObject HandlePosition;
     protected short MaxAmmo_internal = 5; //hax to have inherited variable
+    public List<AudioClip> fireSounds = new List<AudioClip>();
     
     //private
     public short CurrentAmmo{get; protected set;}
