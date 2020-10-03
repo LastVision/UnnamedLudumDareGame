@@ -4,18 +4,20 @@ using UnityEngine;
 
 public class Pistol : WeaponBase
 {
-    // Start is called before the first frame update
+    public override short MaxAmmo {get; protected set;}
     public override void Fire()
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity))
+        int layerMaskAll = ~0;
+
+        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, Mathf.Infinity, layerMaskAll))
         {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
+            Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward * hit.distance, Color.yellow);
             Debug.Log("Did Hit");
         }
         else
         {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.red);
+            Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward * 1000, Color.red);
             Debug.Log("Did not Hit");
         }
     }

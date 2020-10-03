@@ -7,7 +7,7 @@ using UnityEngine;
 public abstract class WeaponBase : MonoBehaviour
 {
     
-    public short MaxAmmo = 5;
+    public virtual short MaxAmmo {get; protected set;}
     public Mesh model;
 
     private short CurrentAmmo = 5;
