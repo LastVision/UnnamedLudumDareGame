@@ -42,7 +42,6 @@ public class WeildingGun : MonoBehaviour
             currentWeapon.SetActive(true);
 
             currentWeaponIndex = weaponIndex;
-            Debug.Log(currentWeaponIndex);
         }
     }
 
