@@ -24,6 +24,7 @@ public class Health : MonoBehaviour
         if (CurrentHP < MaxHP && CurrentHP > 0f)
         {
             CurrentHP += HPRegenPerSec * Time.deltaTime;
+            CurrentHP = Mathf.Min(CurrentHP, MaxHP);
         }
 
         if (DisplayHealth)
