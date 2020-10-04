@@ -37,6 +37,7 @@ public class WeildingGun : MonoBehaviour
         {
             if (currentWeapon)
             {
+                currentWeapon.GetComponent<Weapon_Base>().InterruptReload();
                 currentWeapon.SetActive(false);
             }
             currentWeapon = Weapons[weaponIndex];

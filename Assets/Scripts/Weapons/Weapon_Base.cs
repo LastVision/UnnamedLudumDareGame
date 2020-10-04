@@ -39,6 +39,10 @@ public abstract class Weapon_Base : MonoBehaviour
         if (ReloadTimer > 0.0f)
         {
             ReloadTimer -= Time.deltaTime;
+            if (ReloadTimer <= 0.0f)
+            {
+                DoneReloading();
+            }
         }
         if (WeaponTimer > 0.0f)
         {
@@ -89,9 +93,24 @@ public abstract class Weapon_Base : MonoBehaviour
 
     public virtual void Reload()
     {
-        CurrentAmmo = MaxAmmo_internal;
+        gameObject.transform.Rotate(new Vector3(90, 0, 0));
         ReloadTimer = ReloadCooldown_internal;
         GameObject.FindWithTag("Player").GetComponent<AudioSource>().PlayOneShot(reloadSounds[Random.Range(0, reloadSounds.Count - 1)]);
     }
 
+    void DoneReloading()
+    {
+        CurrentAmmo = MaxAmmo_internal;
+        gameObject.transform.Rotate(new Vector3(-90, 0, 0));
+    }
+
+    public void InterruptReload()
+    {
+        if (ReloadTimer > 0.0f)
+        {
+            ReloadTimer = 0.0f;
+            gameObject.transform.Rotate(new Vector3(-90, 0, 0));
+            GameObject.FindWithTag("Player").GetComponent<AudioSource>().Stop();
+        }
+    }
 }
