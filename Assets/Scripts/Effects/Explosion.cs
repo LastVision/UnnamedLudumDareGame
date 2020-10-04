@@ -2,17 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Explosion : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public float ExplosionRadius = 1f;
+    public float ExplosionDamage = 1f;
+    public float LifeTime = 1f;
     void Start()
     {
-        
+        GetComponent<SphereCollider>().radius = ExplosionRadius;
+        Destroy(this, LifeTime);
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnTriggerEnter(Collider collider)
     {
-        
+        var healthComponent = collider.GetComponent<Health>();
+        if (healthComponent)
+        {
+            healthComponent.Damage(ExplosionDamage);
+        }
     }
 }

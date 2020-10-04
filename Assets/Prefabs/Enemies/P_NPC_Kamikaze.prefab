@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2198122767007691387}
   - component: {fileID: 8337829423014098743}
   - component: {fileID: -9209659837878219100}
+  - component: {fileID: -3969496533521443530}
   m_Layer: 0
   m_Name: P_NPC_Kamikaze
   m_TagString: Enemy
@@ -45,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6102f8f24df4da49b6388629f140ac8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  patrolPoints: []
   idleSound: {fileID: 8300000, guid: 88019aa9369d7064eabc91cd067a40f0, type: 3}
   aggroSound: {fileID: 8300000, guid: 96aab5519a6d6344386ca496fc9d7b9f, type: 3}
   aggroRadius: 3
@@ -52,6 +54,7 @@ MonoBehaviour:
   explosionRadius: 2
   explosionDamage: 1
   movementSpeed: 10
+  explosionParticleGameObject: {fileID: 5207450708071276621, guid: 6553bace1507c1941ad2d999015b782b, type: 3}
 --- !u!82 &-9209659837878219100
 AudioSource:
   m_ObjectHideFlags: 0
@@ -157,6 +160,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-3969496533521443530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2198122767007691386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c571b7427fc35294d8f71803dadc49bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 3
 --- !u!1001 &6863073369932651685
 PrefabInstance:
   m_ObjectHideFlags: 0
