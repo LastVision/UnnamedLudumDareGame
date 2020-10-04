@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2846521161303591656}
   m_Layer: 0
   m_Name: P_Wall_U_Shaped
-  m_TagString: SolidEnvironment
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -170,6 +170,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: M_Wall
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 58999ce2b12aa344da8caf96aa848875, type: 3}
+      propertyPath: m_TagString
+      value: SolidEnvironment
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58999ce2b12aa344da8caf96aa848875, type: 3}
 --- !u!1 &2693734135674718837 stripped
@@ -236,6 +240,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e056dbd13b8ffb84f8181aef946da799, type: 3}
       propertyPath: m_Name
       value: M_Wall_Corner
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e056dbd13b8ffb84f8181aef946da799, type: 3}
+      propertyPath: m_TagString
+      value: SolidEnvironment
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e056dbd13b8ffb84f8181aef946da799, type: 3}
@@ -304,6 +312,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: M_Wall (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 58999ce2b12aa344da8caf96aa848875, type: 3}
+      propertyPath: m_TagString
+      value: SolidEnvironment
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58999ce2b12aa344da8caf96aa848875, type: 3}
 --- !u!1 &5289084313653499555 stripped
@@ -371,6 +383,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: M_Wall (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 58999ce2b12aa344da8caf96aa848875, type: 3}
+      propertyPath: m_TagString
+      value: SolidEnvironment
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58999ce2b12aa344da8caf96aa848875, type: 3}
 --- !u!1 &5412550750522531810 stripped
@@ -437,6 +453,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e056dbd13b8ffb84f8181aef946da799, type: 3}
       propertyPath: m_Name
       value: M_Wall_Corner (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e056dbd13b8ffb84f8181aef946da799, type: 3}
+      propertyPath: m_TagString
+      value: SolidEnvironment
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e056dbd13b8ffb84f8181aef946da799, type: 3}

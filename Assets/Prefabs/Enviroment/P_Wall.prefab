@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 693454513367645243}
   m_Layer: 0
   m_Name: P_Wall
-  m_TagString: SolidEnvironment
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113,6 +113,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 58999ce2b12aa344da8caf96aa848875, type: 3}
       propertyPath: m_Name
       value: M_Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 58999ce2b12aa344da8caf96aa848875, type: 3}
+      propertyPath: m_TagString
+      value: SolidEnvironment
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58999ce2b12aa344da8caf96aa848875, type: 3}

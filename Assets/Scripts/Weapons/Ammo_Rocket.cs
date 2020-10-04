@@ -28,19 +28,6 @@ public class Ammo_Rocket : MonoBehaviour
             Explode();
             return;
         }
-
-        var parent = collider.gameObject.transform.parent;
-        if (parent)
-        {
-            switch (parent.tag)
-            {
-                case "SolidEnvironment":
-                case "Enemy":
-                case "Player":;
-                Explode();
-                break;
-            }
-        }
     }
 
     private void Explode()

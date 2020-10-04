@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   emissiveColor: {r: 1, g: 0, b: 0, a: 0}
+  setEmissiveColor: 0
 --- !u!65 &5760322749547202827
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -112,6 +113,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 88d03b1612455fc488acb5ce8b60716e, type: 3}
       propertyPath: m_Name
       value: M_Wall_Pillar
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 88d03b1612455fc488acb5ce8b60716e, type: 3}
+      propertyPath: m_TagString
+      value: SolidEnvironment
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88d03b1612455fc488acb5ce8b60716e, type: 3}
