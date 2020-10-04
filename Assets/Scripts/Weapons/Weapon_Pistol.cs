@@ -11,8 +11,6 @@ public class Weapon_Pistol : Weapon_Base
         RaycastHit hit;
         int layerMaskAll = ~0;
 
-        GameObject.FindWithTag("Player").GetComponent<AudioSource>().PlayOneShot(fireSounds[Random.Range(0, fireSounds.Count - 1)]);
-
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, Mathf.Infinity, layerMaskAll))
         {
             var enemy = hit.transform.gameObject.GetComponent<EnemyBehaviour>();

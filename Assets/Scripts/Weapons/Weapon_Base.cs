@@ -27,7 +27,7 @@ public abstract class Weapon_Base : MonoBehaviour
     {
         MaxAmmo_internal = MaxAmmo;
         CurrentAmmo = MaxAmmo_internal;
-        ReloadCooldown = ReloadCooldown_internal;
+        ReloadCooldown_internal = ReloadCooldown;
     }
 
     void Update()
@@ -64,6 +64,7 @@ public abstract class Weapon_Base : MonoBehaviour
         {
             --CurrentAmmo;
             FireAlgoritm();
+            GameObject.FindWithTag("Player").GetComponent<AudioSource>().PlayOneShot(fireSounds[Random.Range(0, fireSounds.Count - 1)]);
         }
     }
 
@@ -80,7 +81,8 @@ public abstract class Weapon_Base : MonoBehaviour
     public virtual void Reload()
     {
         CurrentAmmo = MaxAmmo_internal;
-        ReloadTimer = ReloadCooldown;
+        ReloadTimer = ReloadCooldown_internal;
+        GameObject.FindWithTag("Player").GetComponent<AudioSource>().PlayOneShot(reloadSounds[Random.Range(0, reloadSounds.Count - 1)]);
     }
 
 }
