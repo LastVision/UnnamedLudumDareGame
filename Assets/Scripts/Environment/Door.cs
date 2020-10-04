@@ -11,6 +11,7 @@ public class Door : MonoBehaviour
 
     public AudioClip OpenDoorSound;
     public AudioClip CloseDoorSound;
+    private Vector3 myTargetPosition;
 
     private Light Light1;
     private Light Light2;
@@ -36,6 +37,14 @@ public class Door : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        if (Vector3.Distance(DoorModel.transform.localPosition, myTargetPosition) > 0.01f)
+        {
+            DoorModel.transform.localPosition = Vector3.Lerp(DoorModel.transform.localPosition, myTargetPosition, 0.01f);
+        }
+    }
+
     public void TryOpen()
     {
         if (!IsLocked)
@@ -47,7 +56,7 @@ public class Door : MonoBehaviour
     {
         gameObject.GetComponent<AudioSource>().clip = OpenDoorSound;
         gameObject.GetComponent<AudioSource>().Play();
-        DoorModel.transform.localPosition = ClosePosition + Vector3.up * 3f;
+        myTargetPosition = ClosePosition + Vector3.up * 3.5f;
         Light1.enabled = false;
         Light2.enabled = false;
     }
@@ -56,7 +65,7 @@ public class Door : MonoBehaviour
     {
         gameObject.GetComponent<AudioSource>().clip = CloseDoorSound;
         gameObject.GetComponent<AudioSource>().Play();
-        DoorModel.transform.localPosition = ClosePosition;
+        myTargetPosition = ClosePosition;
         Light1.enabled = true;
         Light2.enabled = true;
     }
