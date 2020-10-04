@@ -61,13 +61,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 968dd84d4175a53438d1efe3895a956b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 15
+  Speed: 18
   ExplosionRadius: 2
   ExplosionDamage: 1
-  ExplosionObject: {fileID: 1543669184806772335, guid: fae2c4d72d66adc49bd2d0480d5a7078,
-    type: 3}
-  ExplosionParticleObject: {fileID: 5207450708071276621, guid: 6553bace1507c1941ad2d999015b782b,
-    type: 3}
+  ExplosionObject: {fileID: 1543669184806772335, guid: fae2c4d72d66adc49bd2d0480d5a7078, type: 3}
+  ExplosionParticleObject: {fileID: 5207450708071276621, guid: 6553bace1507c1941ad2d999015b782b, type: 3}
   explosionSounds:
   - {fileID: 8300000, guid: 1fa3a2c04b84e204ea2b856f705ec6ff, type: 3}
   - {fileID: 8300000, guid: 680c43d85623db34699bd856a3f21d8b, type: 3}
