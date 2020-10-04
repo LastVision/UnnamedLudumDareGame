@@ -88,7 +88,7 @@ public class WeildingGun : MonoBehaviour
         if (!currentWeapon)
         {
             return;
-        }   
+        } 
         Weapon_Base Weapon = currentWeapon.GetComponent<Weapon_Base>();
 
         if (Input.GetButtonDown("Reload"))
@@ -122,7 +122,12 @@ public class WeildingGun : MonoBehaviour
 
         if (UI_Ammo)
         {
-            UI_Ammo.text = string.Format("{0}/{1}", Weapon.CurrentAmmo, Weapon.MaxAmmo);     
+            if (!UI_Ammo.enabled)
+            {
+                UI_Ammo.enabled = true;
+            }
+
+            UI_Ammo.text = string.Format("Ammo: {0}/{1}", Weapon.CurrentAmmo, Weapon.MaxAmmo);     
         }
     }
 
