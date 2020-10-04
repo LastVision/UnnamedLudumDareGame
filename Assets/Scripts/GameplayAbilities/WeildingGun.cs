@@ -108,13 +108,16 @@ public class WeildingGun : MonoBehaviour
         }
 
         float scrollInput = Input.GetAxis("ChangeWeaponWithScroll");
-        if (scrollInput > 0f)
+        if (Weapons.Count > 1)
         {
-            SwitchToNextWeapon();
-        }
-        if (scrollInput < 0f)
-        {
-            SwitchToPreviousWeapon();
+            if (scrollInput > 0f)
+            {
+                SwitchToNextWeapon();
+            }
+            if (scrollInput < 0f)
+            {
+                SwitchToPreviousWeapon();
+            }
         }
 
         if (UI_Ammo)
