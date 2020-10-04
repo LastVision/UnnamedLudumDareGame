@@ -114,7 +114,6 @@ public class FPSMovement : MonoBehaviour
         {
             landTimer -= Time.deltaTime;
         }
-        Debug.Log(Physics.Raycast(gameObject.transform.position, -Vector3.up, distToGround + 0.85f));
     }
 
 }

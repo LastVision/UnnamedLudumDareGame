@@ -24,7 +24,7 @@ public class EnviormentColor : MonoBehaviour
         var renderers = GetComponentsInChildren<MeshRenderer>();
         foreach(MeshRenderer renderer in renderers)
         {
-            renderer.sharedMaterial.SetColor("_emissiveColor", emissiveColor);
+            renderer.material.SetColor("_emissiveColor", emissiveColor);
         }
     }
 }
