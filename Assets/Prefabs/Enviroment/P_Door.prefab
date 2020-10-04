@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: -7870079854090438537}
   m_Layer: 0
   m_Name: P_Door
-  m_TagString: SolidEnvironment
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -373,7 +373,7 @@ GameObject:
   - component: {fileID: 3741550292827843845}
   m_Layer: 0
   m_Name: DoorModel
-  m_TagString: Untagged
+  m_TagString: SolidEnvironment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
