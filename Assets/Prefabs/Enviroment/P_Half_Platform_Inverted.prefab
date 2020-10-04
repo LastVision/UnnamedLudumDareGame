@@ -226,6 +226,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: M_Wall_Half (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0df17d0af99edda4d98244c50ca1cb3d, type: 3}
+      propertyPath: m_TagString
+      value: SolidEnvironment
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0df17d0af99edda4d98244c50ca1cb3d, type: 3}
 --- !u!1 &3220261288661337132 stripped
@@ -293,6 +297,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: M_Wall_Half_Corner (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 58530ab221bbf594bb24933fc29e33f7, type: 3}
+      propertyPath: m_TagString
+      value: SolidEnvironment
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58530ab221bbf594bb24933fc29e33f7, type: 3}
 --- !u!4 &2391922620021276545 stripped
@@ -359,6 +367,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 58530ab221bbf594bb24933fc29e33f7, type: 3}
       propertyPath: m_Name
       value: M_Wall_Half_Corner
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 58530ab221bbf594bb24933fc29e33f7, type: 3}
+      propertyPath: m_TagString
+      value: SolidEnvironment
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58530ab221bbf594bb24933fc29e33f7, type: 3}
@@ -435,6 +447,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: M_Floor
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7b2f93ef3aba55d429aa213ddfd029e4, type: 3}
+      propertyPath: m_TagString
+      value: SolidEnvironment
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b2f93ef3aba55d429aa213ddfd029e4, type: 3}
 --- !u!1 &5662723166264363955 stripped
@@ -501,6 +517,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 58530ab221bbf594bb24933fc29e33f7, type: 3}
       propertyPath: m_Name
       value: M_Wall_Half_Corner (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 58530ab221bbf594bb24933fc29e33f7, type: 3}
+      propertyPath: m_TagString
+      value: SolidEnvironment
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58530ab221bbf594bb24933fc29e33f7, type: 3}
@@ -569,6 +589,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: M_Wall_Half_Corner (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 58530ab221bbf594bb24933fc29e33f7, type: 3}
+      propertyPath: m_TagString
+      value: SolidEnvironment
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58530ab221bbf594bb24933fc29e33f7, type: 3}
 --- !u!1 &5701310294372874357 stripped
@@ -635,6 +659,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 0df17d0af99edda4d98244c50ca1cb3d, type: 3}
       propertyPath: m_Name
       value: M_Wall_Half
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0df17d0af99edda4d98244c50ca1cb3d, type: 3}
+      propertyPath: m_TagString
+      value: SolidEnvironment
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0df17d0af99edda4d98244c50ca1cb3d, type: 3}
@@ -703,6 +731,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: M_Wall_Half (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0df17d0af99edda4d98244c50ca1cb3d, type: 3}
+      propertyPath: m_TagString
+      value: SolidEnvironment
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0df17d0af99edda4d98244c50ca1cb3d, type: 3}
 --- !u!4 &5720583992387171751 stripped
@@ -769,6 +801,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 0df17d0af99edda4d98244c50ca1cb3d, type: 3}
       propertyPath: m_Name
       value: M_Wall_Half (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0df17d0af99edda4d98244c50ca1cb3d, type: 3}
+      propertyPath: m_TagString
+      value: SolidEnvironment
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0df17d0af99edda4d98244c50ca1cb3d, type: 3}
