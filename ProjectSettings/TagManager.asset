@@ -6,6 +6,7 @@ TagManager:
   tags:
   - UIHand
   - Enemy
+  - SolidEnvironment
   layers:
   - Default
   - TransparentFX

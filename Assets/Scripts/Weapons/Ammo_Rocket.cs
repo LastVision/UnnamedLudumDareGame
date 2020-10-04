@@ -19,16 +19,34 @@ public class Ammo_Rocket : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
-        if (!collider.gameObject.GetComponent<Weapon_Base>())
+        var tag = collider.gameObject.tag;
+        switch (tag)
         {
+            case "SolidEnvironment":
+            case "Enemy":
+            case "Player":
             Explode();
+            break;
+        }
+
+        var parent = collider.gameObject.transform.parent;
+        if (parent)
+        {
+            switch (parent.tag)
+            {
+                case "SolidEnvironment":
+                case "Enemy":
+                case "Player":;
+                Explode();
+                break;
+            }
         }
     }
 
     private void Explode()
     {
         gameObject.GetComponent<AudioSource>().PlayOneShot(explosionSounds[Random.Range(0, explosionSounds.Count - 1)]);
-        
+
         var go = Instantiate (ExplosionObject, transform.position, Quaternion.identity) as GameObject;
         var explosion = go.GetComponent<Explosion>();
         explosion.LifeTime = 0.5f;
