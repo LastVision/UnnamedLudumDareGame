@@ -8,12 +8,16 @@ public abstract class Weapon_Base : MonoBehaviour
 {
     //public
     public short MaxAmmo;
+    public float ReloadCooldown;
     public GameObject MuzzlePosition;
     public GameObject HandlePosition;
     public List<AudioClip> fireSounds = new List<AudioClip>();
+    public List<AudioClip> reloadSounds = new List<AudioClip>();
     
     //protected
     protected short MaxAmmo_internal = 5; //hax to have inherited variable
+    protected float ReloadCooldown_internal = 1.5f;
+    protected float ReloadTimer = 0.0f;
     
     //private
     public short CurrentAmmo{get; protected set;}
@@ -23,6 +27,15 @@ public abstract class Weapon_Base : MonoBehaviour
     {
         MaxAmmo_internal = MaxAmmo;
         CurrentAmmo = MaxAmmo_internal;
+        ReloadCooldown = ReloadCooldown_internal;
+    }
+
+    void Update()
+    {
+        if (ReloadTimer > 0.0f)
+        {
+            ReloadTimer -= Time.deltaTime;
+        }
     }
 
     void Reset()
@@ -47,15 +60,27 @@ public abstract class Weapon_Base : MonoBehaviour
 
     public virtual void Fire()
     {
-        --CurrentAmmo;
-        FireAlgoritm();
+        if (ReloadTimer <= 0.0f)
+        {
+            --CurrentAmmo;
+            FireAlgoritm();
+        }
     }
 
     public abstract void FireAlgoritm();
 
+    public void TryToReload()
+    {
+        if (ReloadTimer <= 0.0f)
+        {
+            Reload();
+        }
+    }
+
     public virtual void Reload()
     {
         CurrentAmmo = MaxAmmo_internal;
+        ReloadTimer = ReloadCooldown;
     }
 
 }

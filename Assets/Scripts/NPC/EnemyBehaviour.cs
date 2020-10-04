@@ -19,6 +19,8 @@ public class EnemyBehaviour : MonoBehaviour
     protected float stateTime = 0.0f;
     private float despawnTime = 5.0f;
 
+    public AudioClip idleSound;
+    public AudioClip aggroSound;
     void Start()
     {
         OnInit();

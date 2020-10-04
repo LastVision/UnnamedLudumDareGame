@@ -29,4 +29,10 @@ public class Weapon_Pistol : Weapon_Base
 
 
     }
+
+    public override void Reload()
+    {
+        GameObject.FindWithTag("Player").GetComponent<AudioSource>().PlayOneShot(reloadSounds[Random.Range(0, reloadSounds.Count - 1)]);
+        base.Reload();
+    }
 }
