@@ -6,7 +6,7 @@ using UnityEngine;
 [System.Serializable]
 public class Weapon_Shotgun : Weapon_Base
 {
-    public override void Fire()
+    public override void FireAlgoritm()
     {
         RaycastHit hit;
         int layerMaskAll = ~0;
@@ -18,7 +18,11 @@ public class Weapon_Shotgun : Weapon_Base
 
             if (Physics.Raycast(Camera.main.transform.position, dir, out hit, Mathf.Infinity, layerMaskAll))
             {
-                Debug.Log("Did Hit");
+                var enemy = hit.transform.gameObject.GetComponent<EnemyBehaviour>();
+                if (enemy)
+                {
+                    enemy.Kill();
+                }
             }
 
             Vector3 start = Camera.main.transform.position + Camera.main.transform.up * -0.05f + dir;

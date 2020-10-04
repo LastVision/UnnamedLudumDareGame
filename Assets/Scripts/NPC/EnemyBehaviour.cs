@@ -7,11 +7,13 @@ public class EnemyBehaviour : MonoBehaviour
     public enum STATE
     {
         IDLE,
-        AGGRO
+        AGGRO,
+        DEAD
     }
 
     protected STATE state = STATE.IDLE;
     protected float stateTime = 0.0f;
+    private float despawnTime = 5.0f;
 
     public AudioClip idleSound;
     public AudioClip aggroSound;
@@ -21,6 +23,15 @@ public class EnemyBehaviour : MonoBehaviour
     }
     void FixedUpdate()
     {
+        if(state == STATE.DEAD)
+        {
+            float currentTime = (Time.fixedTime - stateTime);
+            if(currentTime > despawnTime)
+            {
+                Destroy(gameObject);
+            }
+            return;
+        }
         switch (state)
         {
             case STATE.IDLE:
@@ -41,7 +52,18 @@ public class EnemyBehaviour : MonoBehaviour
         }
     }
 
+    public void Kill()
+    {
+        ChangeState(STATE.DEAD, Time.fixedTime);
+        OnDeath();
+    }
+
     protected virtual void OnInit()
+    {
+
+    }
+
+    protected virtual void OnDeath()
     {
 
     }
