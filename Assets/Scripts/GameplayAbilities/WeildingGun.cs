@@ -93,7 +93,10 @@ public class WeildingGun : MonoBehaviour
             if (Weapon.CurrentAmmo > 0)
             {
                 Weapon.Fire();
-                Debug.Log("Ammo left: " + Weapon.CurrentAmmo);
+            }
+            else
+            {
+                NoAmmo();
             }
         }
 

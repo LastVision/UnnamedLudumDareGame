@@ -542,6 +542,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7561430728121113609, guid: 40aa5e4cfb614044aae21f9448e2771a, type: 3}
   m_PrefabInstance: {fileID: 2144089044}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &82110962 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8978281705769377377, guid: 5e38e1be400170c4395775c9ae83d544, type: 3}
+  m_PrefabInstance: {fileID: 8978281704031817940}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &83368060 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7561430728121113609, guid: 40aa5e4cfb614044aae21f9448e2771a, type: 3}
@@ -11266,6 +11277,10 @@ PrefabInstance:
       propertyPath: UI_Ammo
       value: 
       objectReference: {fileID: 2996058957791315981}
+    - target: {fileID: 1765581797265584815, guid: 3d269b14b6ed68c4e8149b3ecb5f838d, type: 3}
+      propertyPath: DisplayHealth
+      value: 
+      objectReference: {fileID: 82110962}
     - target: {fileID: 3540577801717609228, guid: 3d269b14b6ed68c4e8149b3ecb5f838d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.96
