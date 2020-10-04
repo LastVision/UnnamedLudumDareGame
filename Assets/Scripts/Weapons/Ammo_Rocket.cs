@@ -45,7 +45,8 @@ public class Ammo_Rocket : MonoBehaviour
 
     private void Explode()
     {
-        gameObject.GetComponent<AudioSource>().PlayOneShot(explosionSounds[Random.Range(0, explosionSounds.Count - 1)]);
+        //gameObject.GetComponent<AudioSource>().PlayOneShot(explosionSounds[Random.Range(0, explosionSounds.Count - 1)]);
+        AudioSource.PlayClipAtPoint(explosionSounds[Random.Range(0, explosionSounds.Count - 1)], this.gameObject.transform.position);
 
         var go = Instantiate (ExplosionObject, transform.position, Quaternion.identity) as GameObject;
         var explosion = go.GetComponent<Explosion>();
@@ -58,6 +59,18 @@ public class Ammo_Rocket : MonoBehaviour
         Destroy (explosionParticle , 3);
         
         Destroy(gameObject, 2);
+
+        for (int i = 0; i < transform.childCount; ++i)
+        {
+            var t = transform.GetChild(i);
+            Destroy(t.gameObject);
+        }
+
+        var rb = GetComponent<Rigidbody>();
+        if (rb)
+        {
+            rb.detectCollisions = false;
+        }
     }
 
 }
