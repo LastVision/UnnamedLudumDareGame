@@ -46,7 +46,7 @@ public class BackgroundMusic : MonoBehaviour
         }
     }
 
-    void TriggerNextInstrumentLevel()
+    public void TriggerNextInstrumentLevel()
     {
         if (currentInstrumentLevel != eInstruments.eVocals)
         {
