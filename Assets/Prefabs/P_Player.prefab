@@ -256,7 +256,6 @@ GameObject:
   - component: {fileID: 6890718403117099219}
   - component: {fileID: 1101089674}
   - component: {fileID: 940900844}
-  - component: {fileID: 3219621028145578751}
   - component: {fileID: 1360021338890488816}
   - component: {fileID: 1765581797265584815}
   m_Layer: 0
@@ -300,6 +299,21 @@ MonoBehaviour:
   - {fileID: 8300000, guid: abb7648b71d29a145a31dfcc0221cbcf, type: 3}
   - {fileID: 8300000, guid: fa8212989ce6b98499cb3cc8fcfbab11, type: 3}
   - {fileID: 8300000, guid: 2f9dd95fef0b0e64499daf7c37ee1875, type: 3}
+  landAudioClips:
+  - {fileID: 8300000, guid: 3aa72428ce72f96448e1776219aab9a1, type: 3}
+  - {fileID: 8300000, guid: a6b2e118cafba854399c227e0e4b59e1, type: 3}
+  - {fileID: 8300000, guid: 817c45392952f4840a7a58f60874b840, type: 3}
+  stepAudioClips:
+  - {fileID: 8300000, guid: 775c1e0d8476fa94a950616dc7f6ffe1, type: 3}
+  - {fileID: 8300000, guid: bb405e3e615b98642b0a9bd347633735, type: 3}
+  - {fileID: 8300000, guid: d8475bf93a6e05b46ba9212a8f147160, type: 3}
+  - {fileID: 8300000, guid: 1ddababf2f07b3e47a50cfe3fcd030ed, type: 3}
+  - {fileID: 8300000, guid: 7ac8e064776678f4e949b5bc89bf6295, type: 3}
+  - {fileID: 8300000, guid: 5988aec0d35583943a3b88f756963188, type: 3}
+  - {fileID: 8300000, guid: f79cb3633afe3174a93905521775a74b, type: 3}
+  - {fileID: 8300000, guid: df967c76f8790f648b204f63e94f9e2e, type: 3}
+  - {fileID: 8300000, guid: c6e6b5a9bc97e18498ceeb3202b2bac5, type: 3}
+  - {fileID: 8300000, guid: ebc299b33b4288a439c71734d60f3da6, type: 3}
   speed: 9
   jumpForce: 900
   sensitivity: 60
@@ -380,7 +394,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -450,19 +464,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: -0.75, z: 0}
---- !u!65 &3219621028145578751
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6215962435552208778}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.2, y: 0.2, z: 0.2}
-  m_Center: {x: 0, y: -1.75, z: 0}
 --- !u!114 &1360021338890488816
 MonoBehaviour:
   m_ObjectHideFlags: 0
