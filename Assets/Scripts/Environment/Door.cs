@@ -9,6 +9,9 @@ public class Door : MonoBehaviour
     Vector3 ClosePosition;
     private GameObject DoorModel;
 
+    public AudioClip OpenDoorSound;
+    public AudioClip CloseDoorSound;
+
     private Light Light1;
     private Light Light2;
 
@@ -42,6 +45,8 @@ public class Door : MonoBehaviour
     }
     private void Open()
     {
+        gameObject.GetComponent<AudioSource>().clip = OpenDoorSound;
+        gameObject.GetComponent<AudioSource>().Play();
         DoorModel.transform.localPosition = ClosePosition + Vector3.up * 3f;
         Light1.enabled = false;
         Light2.enabled = false;
@@ -49,6 +54,8 @@ public class Door : MonoBehaviour
 
     private void Close()
     {
+        gameObject.GetComponent<AudioSource>().clip = CloseDoorSound;
+        gameObject.GetComponent<AudioSource>().Play();
         DoorModel.transform.localPosition = ClosePosition;
         Light1.enabled = true;
         Light2.enabled = true;
