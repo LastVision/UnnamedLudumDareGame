@@ -23,8 +23,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2340410756343886886}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.066, z: -0.922}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.075, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8877970109254394402}
@@ -54,7 +54,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5818613772155735123}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.073, z: 1.168}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8877970109254394402}
@@ -71,7 +71,6 @@ GameObject:
   - component: {fileID: 8877970109046268470}
   - component: {fileID: 8877970109046268467}
   - component: {fileID: 8877970109046268464}
-  - component: {fileID: 8877970109046268465}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -142,20 +141,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &8877970109046268465
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8877970109046268471}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!1 &8877970109254394403
 GameObject:
   m_ObjectHideFlags: 0
@@ -204,9 +189,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxAmmo: 3
+  ReloadCooldown: 3
+  WeaponCooldown: 0.5
   MuzzlePosition: {fileID: 5818613772155735123}
   HandlePosition: {fileID: 2340410756343886886}
-  fireSounds: []
+  fireSounds:
+  - {fileID: 8300000, guid: 4bfbd3ef6df64fa45bd8e8ccb75e630d, type: 3}
+  - {fileID: 8300000, guid: 0c0768f6688c505488be85ea463a00c0, type: 3}
+  reloadSounds:
+  - {fileID: 8300000, guid: d4eab4f0b7b1755408afcccf742cc1d6, type: 3}
+  Ammo: {fileID: 2046947634276272929, guid: b868bbbddbfe62044918a9ffca32ed8d, type: 3}
 --- !u!1 &8877970109286337713
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,7 +210,6 @@ GameObject:
   - component: {fileID: 8877970109286337712}
   - component: {fileID: 8877970109286337709}
   - component: {fileID: 8877970109286337714}
-  - component: {fileID: 8877970109286337715}
   m_Layer: 0
   m_Name: Cylinder (1)
   m_TagString: Untagged
@@ -289,17 +280,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &8877970109286337715
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8877970109286337713}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}

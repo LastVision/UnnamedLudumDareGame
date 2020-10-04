@@ -258,6 +258,7 @@ GameObject:
   - component: {fileID: 940900844}
   - component: {fileID: 3219621028145578751}
   - component: {fileID: 1360021338890488816}
+  - component: {fileID: 1765581797265584815}
   m_Layer: 0
   m_Name: P_Player
   m_TagString: Player
@@ -477,3 +478,18 @@ MonoBehaviour:
   - {fileID: 8378145608495001647, guid: fd8161a459eadcc43b49558539d46a18, type: 3}
   - {fileID: 7062711845339430396, guid: a4e09d934b3c64544a969c818b08c1fc, type: 3}
   - {fileID: 8877970109254394403, guid: a2c2a6da17a0ed24193b617f82c13ac1, type: 3}
+  ChangeWeaponSound: {fileID: 8300000, guid: 99fb31c8a77470b4c8fab6bbf598e36f, type: 3}
+  UI_Ammo: {fileID: 0}
+--- !u!114 &1765581797265584815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6215962435552208778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c571b7427fc35294d8f71803dadc49bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 100

@@ -11,16 +11,13 @@ public class Weapon_Pistol : Weapon_Base
         RaycastHit hit;
         int layerMaskAll = ~0;
 
-        GameObject.FindWithTag("Player").GetComponent<AudioSource>().PlayOneShot(fireSounds[Random.Range(0, fireSounds.Count - 1)]);
-
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, Mathf.Infinity, layerMaskAll))
         {
-            var enemy = hit.transform.gameObject.GetComponent<EnemyBehaviour>();
-            if (enemy)
+            var healthComponent = hit.transform.gameObject.GetComponent<Health>();
+            if (healthComponent)
             {
-                enemy.Kill();
+                healthComponent.Damage(Damage_internal);
             }
-        
         }
         
         Vector3 dir = (hit.point - Camera.main.transform.position).normalized;
