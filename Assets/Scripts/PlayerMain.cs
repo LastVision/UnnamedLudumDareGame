@@ -17,7 +17,7 @@ public class PlayerMain : MonoBehaviour
         CameraFader.FadeToColor(Color.black, 2.5f);
         Invoke("ReloadLevel", 2.5f);
         gameObject.GetComponent<FPSMovement>().enabled = false;
-        gameObject.GetComponent<WeildingGun>().enabled = false;
+        gameObject.GetComponent<WeildingGun>().enabled = false; 
     }
     void ReloadLevel()
     {

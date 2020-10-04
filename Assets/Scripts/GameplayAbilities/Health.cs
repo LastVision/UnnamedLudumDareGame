@@ -29,7 +29,7 @@ public class Health : MonoBehaviour
 
         if (DisplayHealth)
         {
-            DisplayHealth.text = string.Format("{0}/{1}", Mathf.Ceil(CurrentHP), MaxHP);
+            DisplayHealth.text = string.Format("Health: {0}/{1}", Mathf.Ceil(CurrentHP), MaxHP);
         }
     }
     public void Damage(float Damage)
