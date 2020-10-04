@@ -6,7 +6,7 @@ using UnityEngine;
 public class EnviormentColor : MonoBehaviour
 {
     [SerializeField]
-    public Color emissiveColor;
+    public Color emissiveColor = Color.red;
 
     public bool setEmissiveColor = false;
 
