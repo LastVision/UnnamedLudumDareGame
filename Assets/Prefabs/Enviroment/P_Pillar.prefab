@@ -86,19 +86,6 @@ Transform:
   m_Father: {fileID: 4688664108918149607}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &7015042964551800922
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5357783301971037021}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 6.560972, y: 2, z: 6.5550346}
-  m_Center: {x: -2.280486, y: 0, z: 2.2775173}
 --- !u!1 &5112543395931884886
 GameObject:
   m_ObjectHideFlags: 0
@@ -129,6 +116,19 @@ Transform:
   m_Father: {fileID: 4097402332056163149}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7015042964551800922
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5357783301971037021}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.560972, y: 2, z: 6.5550346}
+  m_Center: {x: -2.280486, y: 0, z: 2.2775173}
 --- !u!65 &2179997156295437586
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -151,8 +151,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9106163696959589469}
+  - component: {fileID: 7650181054308160542}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: P_Pillar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -176,6 +177,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7650181054308160542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7635315804189742617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee8cb0ad7be2ae84c98c00a32d219c31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  emissiveColor: {r: 1, g: 0, b: 0, a: 0}
+  setEmissiveColor: 0
 --- !u!1001 &3367568128443399955
 PrefabInstance:
   m_ObjectHideFlags: 0

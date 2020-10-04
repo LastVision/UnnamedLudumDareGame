@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8537006732877318784}
+  - component: {fileID: 693454513367645243}
   m_Layer: 0
   m_Name: P_Wall
   m_TagString: SolidEnvironment
@@ -31,6 +32,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &693454513367645243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7224654859445988820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee8cb0ad7be2ae84c98c00a32d219c31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  emissiveColor: {r: 1, g: 0, b: 0, a: 0}
+  setEmissiveColor: 0
 --- !u!65 &5963553704886578097
 BoxCollider:
   m_ObjectHideFlags: 0
