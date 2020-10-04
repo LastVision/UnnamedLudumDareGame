@@ -18,9 +18,17 @@ public class NPCSpawner : MonoBehaviour
             Debug.Log("Npc already is spawned");
             return;
         }
+        if(Type.GetComponent<EnemyBehaviour>() == null)
+        {
+            Debug.Log("This isn't an enemy it does not have the behaviour script!");
+            return;
+        }
 
         spawnedNpc = Instantiate(Type, transform);
-        //TODO: Set PatrolPoints to the NPC
+        var behaviourScript = spawnedNpc.GetComponent<EnemyBehaviour>();
+      
+        behaviourScript.SetPatrolPoints(PatrolPoints);
+
         hasSpawnedNpc = true;
     }
 

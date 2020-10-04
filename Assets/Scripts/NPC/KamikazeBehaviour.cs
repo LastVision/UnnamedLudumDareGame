@@ -18,7 +18,6 @@ public class KamikazeBehaviour : EnemyBehaviour
     public GameObject explosionParticleGameObject;
 
     private Vector3 velocity = Vector3.zero;
-    private Vector3 targetPoint = Vector3.zero;
     private float idlePointDistance = 5.0f;
     private ParticleSystem explosionParticle;
     protected override void OnInit()
@@ -35,12 +34,12 @@ public class KamikazeBehaviour : EnemyBehaviour
             ChangeState(STATE.AGGRO, Time.fixedTime);
             return;
         }
-        float dist = Vector3.Distance(targetPoint, transform.position);
 
-        if(dist < attackRadius)
+        if(ShouldGetNewPatrolTargetPoint())
         {
-            targetPoint = GetRandomPointInRadius(idlePointDistance);
+            targetPoint = GetNextPatrolTargetPoint();
         }
+
         MoveToTargetPoint();
     }
 

@@ -10,7 +10,11 @@ public class EnemyBehaviour : MonoBehaviour
         AGGRO,
         DEAD
     }
-
+    public List<GameObject> patrolPoints = new List<GameObject>();
+    protected bool canPatrol = true;
+    protected float patrolPointDistance = 2.0f;
+    private GameObject currentPatrolPoint = null;
+    protected Vector3 targetPoint = Vector3.zero;
     protected STATE state = STATE.IDLE;
     protected float stateTime = 0.0f;
     private float despawnTime = 5.0f;
@@ -18,6 +22,11 @@ public class EnemyBehaviour : MonoBehaviour
     void Start()
     {
         OnInit();
+        if(currentPatrolPoint == null && patrolPoints.Count > 0)
+        {
+            currentPatrolPoint = patrolPoints[0];
+            targetPoint = currentPatrolPoint.transform.position;
+        }
     }
     void FixedUpdate()
     {
@@ -54,6 +63,11 @@ public class EnemyBehaviour : MonoBehaviour
     {
         ChangeState(STATE.DEAD, Time.fixedTime);
         OnDeath();
+    }
+
+    public void SetPatrolPoints(List<GameObject> points)
+    {
+        patrolPoints = points;
     }
 
     protected virtual void OnInit()
@@ -119,5 +133,33 @@ public class EnemyBehaviour : MonoBehaviour
         }
 
         return playerCoord;
+    }
+
+    protected bool ShouldGetNewPatrolTargetPoint()
+    {
+        float dist = Vector3.Distance(transform.position, targetPoint);
+        return (dist < patrolPointDistance);
+    }
+    protected Vector3 GetCurrentTargetPoint()
+    {
+        return targetPoint;
+    }
+
+    protected Vector3 GetNextPatrolTargetPoint()
+    {
+        if(currentPatrolPoint == null) return targetPoint;
+        int index = patrolPoints.IndexOf(currentPatrolPoint);
+        if(index + 1 >= patrolPoints.Count)
+        {
+            patrolPoints.Reverse();
+            currentPatrolPoint = patrolPoints[0];
+        }
+        else
+        {
+            currentPatrolPoint = patrolPoints[index + 1];
+        }
+        
+        targetPoint = currentPatrolPoint.transform.position;
+        return targetPoint;
     }
 }
