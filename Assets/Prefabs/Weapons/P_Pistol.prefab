@@ -300,6 +300,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxAmmo: 8
   ReloadCooldown: 2
+  WeaponCooldown: 0.15
   MuzzlePosition: {fileID: 3559753592693249941}
   HandlePosition: {fileID: 4446641797097396091}
   fireSounds:
