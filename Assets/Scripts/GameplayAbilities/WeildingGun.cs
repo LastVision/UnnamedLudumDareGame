@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class WeildingGun : MonoBehaviour
 {
 
@@ -10,6 +10,8 @@ public class WeildingGun : MonoBehaviour
     public List<GameObject> WeaponPrefabs;
     protected List<GameObject> Weapons = new List<GameObject>();
     public AudioClip ChangeWeaponSound;
+
+    public Text UI_Ammo;
 
     void Start()
     {
@@ -103,6 +105,11 @@ public class WeildingGun : MonoBehaviour
         if (scrollInput < 0f)
         {
             EquipPreviousWeapon();
+        }
+
+        if (UI_Ammo)
+        {
+            UI_Ammo.text = string.Format("{0}/{1}", Weapon.CurrentAmmo, Weapon.MaxAmmo);     
         }
     }
 

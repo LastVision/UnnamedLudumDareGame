@@ -18,10 +18,10 @@ public class Weapon_Shotgun : Weapon_Base
 
             if (Physics.Raycast(Camera.main.transform.position, dir, out hit, Mathf.Infinity, layerMaskAll))
             {
-                var enemy = hit.transform.gameObject.GetComponent<EnemyBehaviour>();
-                if (enemy)
+                var healthComponent = hit.transform.gameObject.GetComponent<Health>();
+                if (healthComponent)
                 {
-                    enemy.Kill();
+                    healthComponent.Damage(Damage_internal);
                 }
             }
 
