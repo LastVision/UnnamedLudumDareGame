@@ -104,13 +104,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7062711844118239362}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.272, z: -1.503}
+  m_LocalRotation: {x: -0.000866949, y: -0, z: -0, w: 0.99999964}
+  m_LocalPosition: {x: 0, y: -0.254, z: -1.256}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7062711845339430397}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.099, y: 0, z: 0}
 --- !u!1 &7062711844507269160
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,8 +167,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7062711845179703038}
   m_LocalRotation: {x: 0.46261147, y: -0, z: -0, w: 0.88656116}
-  m_LocalPosition: {x: 0, y: -0.0263111, z: -1.2172259}
-  m_LocalScale: {x: 0.22952582, y: 0.7127556, z: 0.10568048}
+  m_LocalPosition: {x: 0, y: -0.03, z: -1.11}
+  m_LocalScale: {x: 0.13999239, y: 0.7127556, z: 0.10568048}
   m_Children: []
   m_Father: {fileID: 3144360518568929923}
   m_RootOrder: 3
@@ -387,13 +387,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7062711845584870804}
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.19768888, z: -0.58322585}
+  m_LocalRotation: {x: 0.7060415, y: -0, z: -0, w: 0.70817053}
+  m_LocalPosition: {x: 0, y: 0.162, z: -0.656}
   m_LocalScale: {x: 0.29610503, y: 0.72919536, z: 0.15161322}
   m_Children: []
   m_Father: {fileID: 3144360518568929923}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 89.83, y: 0, z: 0}
 --- !u!33 &7062711845584870800
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -468,7 +468,7 @@ Transform:
   m_GameObject: {fileID: 8834695691190310942}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0.19768888, z: -0.33977413}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_Children:
   - {fileID: 7062711845584870805}
   - {fileID: 7062711843952005361}
