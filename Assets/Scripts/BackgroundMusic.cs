@@ -42,6 +42,7 @@ public class BackgroundMusic : MonoBehaviour
                 myAudioSource.loop = true;
                 myPlayNextInstrument = false;
                 myAudioSource.Play();
+                GameObject.FindWithTag("Player").GetComponent<Appreciate>().TriggerNewMusicAppreciationRequirement();
             }
         }
     }
