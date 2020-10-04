@@ -12,10 +12,12 @@ public abstract class Weapon_Base : MonoBehaviour
     public float WeaponCooldown;
     public GameObject MuzzlePosition;
     public GameObject HandlePosition;
+    public float Damage;
     public List<AudioClip> fireSounds = new List<AudioClip>();
     public List<AudioClip> reloadSounds = new List<AudioClip>();
     
     //protected
+    protected float Damage_internal = 50f;
     protected short MaxAmmo_internal = 5; //hax to have inherited variable
     protected float ReloadCooldown_internal = 1.5f;
     protected float ReloadTimer = 0.0f;
@@ -28,6 +30,7 @@ public abstract class Weapon_Base : MonoBehaviour
 
     void Start()
     {
+        Damage_internal = Damage;
         MaxAmmo_internal = MaxAmmo;
         CurrentAmmo = MaxAmmo_internal;
         ReloadCooldown_internal = ReloadCooldown;
