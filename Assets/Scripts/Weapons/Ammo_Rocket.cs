@@ -9,6 +9,7 @@ public class Ammo_Rocket : MonoBehaviour
     public float ExplosionDamage = 1f;
     public GameObject ExplosionObject;
     public GameObject ExplosionParticleObject;
+    public List<AudioClip> explosionSounds = new List<AudioClip>();
     
     void Start()
     {
@@ -26,6 +27,8 @@ public class Ammo_Rocket : MonoBehaviour
 
     private void Explode()
     {
+        gameObject.GetComponent<AudioSource>().PlayOneShot(explosionSounds[Random.Range(0, explosionSounds.Count - 1)]);
+        
         var go = Instantiate (ExplosionObject, transform.position, Quaternion.identity) as GameObject;
         var explosion = go.GetComponent<Explosion>();
         explosion.LifeTime = 0.5f;
@@ -35,7 +38,8 @@ public class Ammo_Rocket : MonoBehaviour
         var explosionParticle = Instantiate (ExplosionParticleObject, transform.position, Quaternion.identity) as GameObject;
         explosionParticle.GetComponent<ParticleSystem>().Play();
         Destroy (explosionParticle , 3);
-
-        Destroy(gameObject);
+        
+        Destroy(gameObject, 2);
     }
+
 }
