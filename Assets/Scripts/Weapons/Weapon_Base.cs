@@ -9,6 +9,7 @@ public abstract class Weapon_Base : MonoBehaviour
     //public
     public short MaxAmmo;
     public float ReloadCooldown;
+    public float WeaponCooldown;
     public GameObject MuzzlePosition;
     public GameObject HandlePosition;
     public List<AudioClip> fireSounds = new List<AudioClip>();
@@ -18,6 +19,8 @@ public abstract class Weapon_Base : MonoBehaviour
     protected short MaxAmmo_internal = 5; //hax to have inherited variable
     protected float ReloadCooldown_internal = 1.5f;
     protected float ReloadTimer = 0.0f;
+    protected float WeaponCooldown_internal = 0.25f;
+    protected float WeaponTimer = 0.0f;
     
     //private
     public short CurrentAmmo{get; protected set;}
@@ -28,6 +31,7 @@ public abstract class Weapon_Base : MonoBehaviour
         MaxAmmo_internal = MaxAmmo;
         CurrentAmmo = MaxAmmo_internal;
         ReloadCooldown_internal = ReloadCooldown;
+        WeaponCooldown_internal = WeaponCooldown;
     }
 
     void Update()
@@ -35,6 +39,10 @@ public abstract class Weapon_Base : MonoBehaviour
         if (ReloadTimer > 0.0f)
         {
             ReloadTimer -= Time.deltaTime;
+        }
+        if (WeaponTimer > 0.0f)
+        {
+            WeaponTimer -= Time.deltaTime;
         }
     }
 
@@ -60,10 +68,11 @@ public abstract class Weapon_Base : MonoBehaviour
 
     public virtual void Fire()
     {
-        if (ReloadTimer <= 0.0f)
+        if (ReloadTimer <= 0.0f && WeaponTimer <= 0.0f)
         {
             --CurrentAmmo;
             FireAlgoritm();
+            WeaponTimer = WeaponCooldown_internal;
             GameObject.FindWithTag("Player").GetComponent<AudioSource>().PlayOneShot(fireSounds[Random.Range(0, fireSounds.Count - 1)]);
         }
     }

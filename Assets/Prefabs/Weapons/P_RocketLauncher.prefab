@@ -190,11 +190,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxAmmo: 3
   ReloadCooldown: 3
+  WeaponCooldown: 0.5
   MuzzlePosition: {fileID: 5818613772155735123}
   HandlePosition: {fileID: 2340410756343886886}
-  fireSounds: [{fileID: 8300000, guid: 4bfbd3ef6df64fa45bd8e8ccb75e630d, type: 3},
-    {fileID: 8300000, guid: 0c0768f6688c505488be85ea463a00c0, type: 3}]
-  reloadSounds: []
+  fireSounds:
+  - {fileID: 8300000, guid: 4bfbd3ef6df64fa45bd8e8ccb75e630d, type: 3}
+  - {fileID: 8300000, guid: 0c0768f6688c505488be85ea463a00c0, type: 3}
+  reloadSounds:
+  - {fileID: 8300000, guid: d4eab4f0b7b1755408afcccf742cc1d6, type: 3}
   Ammo: {fileID: 2046947634276272929, guid: b868bbbddbfe62044918a9ffca32ed8d, type: 3}
 --- !u!1 &8877970109286337713
 GameObject:
