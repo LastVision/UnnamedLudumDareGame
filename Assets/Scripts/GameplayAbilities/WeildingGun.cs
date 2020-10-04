@@ -19,21 +19,13 @@ public class WeildingGun : MonoBehaviour
         {
             foreach(GameObject prefab in WeaponPrefabs)
             {
-                GameObject newWeapon = Instantiate(prefab, new Vector3(0, 0, 0), Quaternion.identity);
-
-                Transform handleTransform = newWeapon.GetComponent<Weapon_Base>().GetHandleTransform();
-                var handPosition = Camera.main.transform.Find("HandPosition");
-                newWeapon.transform.SetParent(handPosition);
-                newWeapon.transform.localPosition = -handleTransform.localPosition;
-                newWeapon.transform.localRotation = Quaternion.Inverse(handleTransform.localRotation);
-                newWeapon.SetActive(false);
-                Weapons.Add(newWeapon);
+                EquipWeapon(prefab);
             }
-            EquipWeapon(0);
+            SwitchToWeapon(0);
         }
     }
 
-    void EquipWeapon(int weaponIndex)
+    void SwitchToWeapon(int weaponIndex)
     {
         if (weaponIndex >= 0 && weaponIndex < Weapons.Count)
         {
@@ -50,38 +42,53 @@ public class WeildingGun : MonoBehaviour
         }
     }
 
-    void EquipNextWeapon()
+    void SwitchToNextWeapon()
     {
         int weaponIndex = currentWeaponIndex + 1;
         if (weaponIndex < Weapons.Count)
         {
-            EquipWeapon(weaponIndex);
+            SwitchToWeapon(weaponIndex);
         }
         else
         {
-            EquipWeapon(0);
+            SwitchToWeapon(0);
         }
     }
 
-    void EquipPreviousWeapon()
+    void SwitchToPreviousWeapon()
     {
         int weaponIndex = currentWeaponIndex - 1;
         if (weaponIndex >= 0)
         {
-            EquipWeapon(weaponIndex);
+            SwitchToWeapon(weaponIndex);
         }
         else
         {
-            EquipWeapon(Weapons.Count - 1);
+            SwitchToWeapon(Weapons.Count - 1);
         }
+    }
+
+    public void EquipWeapon(GameObject WeaponPrefab)
+    {
+        GameObject newWeapon = Instantiate(WeaponPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+
+        Transform handleTransform = newWeapon.GetComponent<Weapon_Base>().GetHandleTransform();
+        var handPosition = Camera.main.transform.Find("HandPosition");
+        newWeapon.transform.SetParent(handPosition);
+        newWeapon.transform.localPosition = -handleTransform.localPosition;
+        newWeapon.transform.localRotation = Quaternion.Inverse(handleTransform.localRotation);
+        newWeapon.SetActive(false);
+        Weapons.Add(newWeapon);
+
+        SwitchToWeapon(Weapons.Count - 1);
     }
 
     void Update()
     {
-        if (currentWeapon is null)
+        if (!currentWeapon)
         {
             return;
-        }
+        }   
         Weapon_Base Weapon = currentWeapon.GetComponent<Weapon_Base>();
 
         if (Input.GetButtonDown("Reload"))
@@ -101,13 +108,16 @@ public class WeildingGun : MonoBehaviour
         }
 
         float scrollInput = Input.GetAxis("ChangeWeaponWithScroll");
-        if (scrollInput > 0f)
+        if (Weapons.Count > 1)
         {
-            EquipNextWeapon();
-        }
-        if (scrollInput < 0f)
-        {
-            EquipPreviousWeapon();
+            if (scrollInput > 0f)
+            {
+                SwitchToNextWeapon();
+            }
+            if (scrollInput < 0f)
+            {
+                SwitchToPreviousWeapon();
+            }
         }
 
         if (UI_Ammo)
@@ -118,6 +128,5 @@ public class WeildingGun : MonoBehaviour
 
     void NoAmmo()
     {
-        Debug.Log("No Ammo");
     }
 }

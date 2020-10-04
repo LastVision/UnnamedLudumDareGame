@@ -11,6 +11,7 @@ public class Health : MonoBehaviour
     private float TimeSinceDamage = 0f;
     private float CurrentHP;
     public Text DisplayHealth;
+    public List<AudioClip> hurtSounds = new List<AudioClip>();
     void Start()
     {
         CurrentHP = MaxHP;
@@ -23,6 +24,7 @@ public class Health : MonoBehaviour
         if (CurrentHP < MaxHP && CurrentHP > 0f)
         {
             CurrentHP += HPRegenPerSec * Time.deltaTime;
+            CurrentHP = Mathf.Min(CurrentHP, MaxHP);
         }
 
         if (DisplayHealth)
@@ -42,6 +44,7 @@ public class Health : MonoBehaviour
         }
 
         CurrentHP -= Damage;
+        GameObject.FindWithTag("Player").GetComponent<AudioSource>().PlayOneShot(hurtSounds[Random.Range(0, hurtSounds.Count - 1)]);
         CurrentHP = Mathf.Max(CurrentHP, 0f);
         TimeSinceDamage = 0f;
 

@@ -29,10 +29,6 @@ public class BackgroundMusic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("DebugNextInstrument"))
-        {
-            TriggerNextInstrumentLevel();
-        }
         if (myPlayNextInstrument)
         {
             myAudioSource.loop = false;

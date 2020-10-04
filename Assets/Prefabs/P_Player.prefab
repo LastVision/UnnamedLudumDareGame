@@ -323,6 +323,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c50ba9eca996a6a4c831640bb8edfdb4, type: 3}
   - {fileID: 8300000, guid: 59326e76b7f9b1c42a82f98190540e80, type: 3}
   UIHand: {fileID: 0}
+  AppreciateMusic: {fileID: 0}
 --- !u!82 &6890718403117099219
 AudioSource:
   m_ObjectHideFlags: 0
@@ -496,3 +497,9 @@ MonoBehaviour:
   HPRegenPerSec: 1
   InvincibilityTime: 0.5
   DisplayHealth: {fileID: 0}
+  hurtSounds:
+  - {fileID: 8300000, guid: fdb6d15d0d7bf2440ab3db3d7ea3f93b, type: 3}
+  - {fileID: 8300000, guid: d8365d633a742a949b1b3dfa0c752fc7, type: 3}
+  - {fileID: 8300000, guid: a92e7ab6aaf0d6f478d1d84e01cbb487, type: 3}
+  - {fileID: 8300000, guid: 3e564665ce0d41c4b899af30b71d974d, type: 3}
+  - {fileID: 8300000, guid: e4157109d3e99c84b898b363f523e484, type: 3}
