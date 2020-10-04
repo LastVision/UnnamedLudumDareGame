@@ -16,10 +16,12 @@ public class Door : MonoBehaviour
     {
 
         DoorModel = gameObject.transform.Find("DoorModel").gameObject;
-        Light1 = DoorModel.transform.Find("Light1").gameObject.GetComponent<Light>();
-        Light2 = DoorModel.transform.Find("Light2").gameObject.GetComponent<Light>();
-        ClosePosition = DoorModel.transform.localPosition;
-
+        if (DoorModel)
+        {
+            Light1 = DoorModel.transform.Find("Light1").gameObject.GetComponent<Light>();
+            Light2 = DoorModel.transform.Find("Light2").gameObject.GetComponent<Light>();
+            ClosePosition = DoorModel.transform.localPosition;
+        }
 
         if (StartsLocked)
         {
@@ -30,7 +32,7 @@ public class Door : MonoBehaviour
             Unlock();
         }
     }
-    
+
     public void TryOpen()
     {
         if (!IsLocked)
