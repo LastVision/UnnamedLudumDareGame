@@ -11,7 +11,7 @@ public class Explosion : MonoBehaviour
     void Start()
     {
         GetComponent<SphereCollider>().radius = ExplosionRadius;
-        Destroy(this, LifeTime);
+        Destroy(gameObject, LifeTime);
     }
 
     void OnTriggerEnter(Collider collider)
@@ -20,7 +20,6 @@ public class Explosion : MonoBehaviour
         if (healthComponent)
         {
             healthComponent.Damage(ExplosionDamage);
-            Debug.Log("damage");
         }
     }
 }
