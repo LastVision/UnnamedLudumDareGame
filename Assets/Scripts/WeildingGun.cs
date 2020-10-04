@@ -81,7 +81,7 @@ public class WeildingGun : MonoBehaviour
 
         if (Input.GetButtonDown("Reload"))
         {
-            Weapon.Reload();
+            Weapon.TryToReload();
         }
         if (Input.GetButtonDown("Fire1"))
         {

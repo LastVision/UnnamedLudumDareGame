@@ -298,7 +298,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4a11fb405d8ed43b25ddfc45f8bd6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxAmmo: 5
+  MaxAmmo: 8
+  ReloadCooldown: 1.5
   MuzzlePosition: {fileID: 3559753592693249941}
   HandlePosition: {fileID: 4446641797097396091}
   fireSounds:
@@ -306,6 +307,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 91cdee04a4c1de94d8b7991d8cd6047c, type: 3}
   - {fileID: 8300000, guid: 7cfab521409cf86418f3298654126d04, type: 3}
   - {fileID: 8300000, guid: e9d059fa01a121846a17130ff03bbd5d, type: 3}
+  reloadSounds:
+  - {fileID: 8300000, guid: 2d30a4e077141e64292729d3b18622dc, type: 3}
 --- !u!1001 &6634552424450987149
 PrefabInstance:
   m_ObjectHideFlags: 0
