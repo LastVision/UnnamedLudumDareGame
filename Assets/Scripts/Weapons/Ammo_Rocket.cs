@@ -26,7 +26,7 @@ public class Ammo_Rocket : MonoBehaviour
             case "Enemy":
             case "Player":
             Explode();
-            break;
+            return;
         }
 
         var parent = collider.gameObject.transform.parent;
