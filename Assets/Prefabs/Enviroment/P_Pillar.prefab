@@ -258,6 +258,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: M_Wall_Corner (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e056dbd13b8ffb84f8181aef946da799, type: 3}
+      propertyPath: m_TagString
+      value: SolidEnvironment
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e056dbd13b8ffb84f8181aef946da799, type: 3}
 --- !u!1 &2485257532781003330 stripped
@@ -336,6 +340,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e056dbd13b8ffb84f8181aef946da799, type: 3}
       propertyPath: m_Name
       value: M_Wall_Corner (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e056dbd13b8ffb84f8181aef946da799, type: 3}
+      propertyPath: m_TagString
+      value: SolidEnvironment
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e056dbd13b8ffb84f8181aef946da799, type: 3}
@@ -416,6 +424,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: M_Wall_Corner (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e056dbd13b8ffb84f8181aef946da799, type: 3}
+      propertyPath: m_TagString
+      value: SolidEnvironment
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e056dbd13b8ffb84f8181aef946da799, type: 3}
 --- !u!1 &5357783301971037021 stripped
@@ -494,6 +506,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e056dbd13b8ffb84f8181aef946da799, type: 3}
       propertyPath: m_Name
       value: M_Wall_Corner (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e056dbd13b8ffb84f8181aef946da799, type: 3}
+      propertyPath: m_TagString
+      value: SolidEnvironment
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e056dbd13b8ffb84f8181aef946da799, type: 3}
