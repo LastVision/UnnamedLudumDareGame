@@ -9,6 +9,7 @@ public class WeildingGun : MonoBehaviour
     private int currentWeaponIndex;
     public List<GameObject> WeaponPrefabs;
     protected List<GameObject> Weapons = new List<GameObject>();
+    public AudioClip ChangeWeaponSound;
 
     void Start()
     {
@@ -40,6 +41,7 @@ public class WeildingGun : MonoBehaviour
             }
             currentWeapon = Weapons[weaponIndex];
             currentWeapon.SetActive(true);
+            GameObject.FindWithTag("Player").GetComponent<AudioSource>().PlayOneShot(ChangeWeaponSound);
 
             currentWeaponIndex = weaponIndex;
         }
