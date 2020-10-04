@@ -20,6 +20,7 @@ public class Explosion : MonoBehaviour
         if (healthComponent)
         {
             healthComponent.Damage(ExplosionDamage);
+            Debug.Log("damage");
         }
     }
 }
