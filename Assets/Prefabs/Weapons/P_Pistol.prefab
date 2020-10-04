@@ -111,6 +111,7 @@ MonoBehaviour:
   WeaponCooldown: 0.15
   MuzzlePosition: {fileID: 3559753592693249941}
   HandlePosition: {fileID: 4446641797097396091}
+  TargetReloadRotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
   Damage: 0
   fireSounds:
   - {fileID: 8300000, guid: 2df1a658a71cbec40a0bfc887c80d2eb, type: 3}
