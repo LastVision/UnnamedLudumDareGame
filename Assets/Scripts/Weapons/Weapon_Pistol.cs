@@ -13,6 +13,7 @@ public class Weapon_Pistol : Weapon_Base
 
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, Mathf.Infinity, layerMaskAll))
         {
+            
             var healthComponent = hit.transform.gameObject.GetComponent<Health>();
             if (healthComponent)
             {

@@ -16,13 +16,13 @@ public class KamikazeBehaviour : EnemyBehaviour
     public float movementSpeed = 3.0f;
     [SerializeField]
     public GameObject explosionParticleGameObject;
-
+    public GameObject explosionObject;
+    public List<AudioClip> explosionSounds = new List<AudioClip>();
     private Vector3 velocity = Vector3.zero;
     private float idlePointDistance = 5.0f;
-    private ParticleSystem explosionParticle;
     protected override void OnInit()
     {
-        explosionParticle = explosionParticleGameObject.GetComponent<ParticleSystem>();
+
     }
     protected override void OnUpdateIdleState()
     {
@@ -55,7 +55,7 @@ public class KamikazeBehaviour : EnemyBehaviour
         }
         if(playerDist < attackRadius && currentTime > 0.5f)
         {
-            Explode();
+            Kill();
             return;
         }
         
@@ -68,8 +68,7 @@ public class KamikazeBehaviour : EnemyBehaviour
 
     protected override void OnDeath()
     {
-        Debug.Log("I AM A DEAD DRONE!");
-        GetComponentInChildren<MeshRenderer>().enabled = false;
+        GetComponentInChildren<MeshRenderer>().enabled = false;  
     }
 
     private void MoveToTargetPoint()
@@ -81,14 +80,25 @@ public class KamikazeBehaviour : EnemyBehaviour
     }
     private void Explode()
     {
-        if(explosionParticle)
+        if (explosionSounds.Count > 0)
         {
-            explosionParticle.Play();
-            Kill();
+            AudioSource.PlayClipAtPoint(explosionSounds[Random.Range(0, explosionSounds.Count - 1)], this.gameObject.transform.position);
         }
-        else
+
+        if (explosionObject)
         {
-            Debug.Log("Particles didn't work");
+            var go = Instantiate (explosionObject, transform.GetChild(0).position, Quaternion.identity) as GameObject;
+            var explosion = go.GetComponent<Explosion>();
+            explosion.LifeTime = 0.5f;
+            explosion.ExplosionDamage = explosionDamage;
+            explosion.ExplosionRadius = explosionRadius;
+        }
+
+        if (explosionParticleGameObject)
+        {
+            var explosionParticle = Instantiate (explosionParticleGameObject, transform.GetChild(0).position, Quaternion.identity) as GameObject;
+            explosionParticle.GetComponent<ParticleSystem>().Play();
+            Destroy (explosionParticle , 3);
         }
     }
 
@@ -100,5 +110,11 @@ public class KamikazeBehaviour : EnemyBehaviour
         //TODO: check if valid point(aka can you reach it without passing through walls)
 
         return point;
+    }
+
+    override public void Kill()
+    {
+        Explode();
+        base.Kill();
     }
 }

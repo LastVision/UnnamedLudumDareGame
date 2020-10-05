@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8337829423014098743}
   - component: {fileID: -9209659837878219100}
   - component: {fileID: -3969496533521443530}
+  - component: {fileID: 2413979153447241305}
   m_Layer: 0
   m_Name: P_NPC_Kamikaze
   m_TagString: Enemy
@@ -50,11 +51,13 @@ MonoBehaviour:
   idleSound: {fileID: 8300000, guid: 88019aa9369d7064eabc91cd067a40f0, type: 3}
   aggroSound: {fileID: 8300000, guid: 96aab5519a6d6344386ca496fc9d7b9f, type: 3}
   aggroRadius: 10
-  attackRadius: 6
-  explosionRadius: 3
-  explosionDamage: 1
+  attackRadius: 2
+  explosionRadius: 4
+  explosionDamage: 50
   movementSpeed: 5
   explosionParticleGameObject: {fileID: 5207450708071276621, guid: 6553bace1507c1941ad2d999015b782b, type: 3}
+  explosionObject: {fileID: 1543669184806772335, guid: fae2c4d72d66adc49bd2d0480d5a7078, type: 3}
+  explosionSounds: []
 --- !u!82 &-9209659837878219100
 AudioSource:
   m_ObjectHideFlags: 0
@@ -177,6 +180,20 @@ MonoBehaviour:
   InvincibilityTime: 0
   DisplayHealth: {fileID: 0}
   hurtSounds: []
+--- !u!136 &2413979153447241305
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2198122767007691386}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.6
+  m_Height: 1.5
+  m_Direction: 2
+  m_Center: {x: 0, y: 1.65, z: 0.15}
 --- !u!1001 &6863073369932651685
 PrefabInstance:
   m_ObjectHideFlags: 0
