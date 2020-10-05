@@ -9,29 +9,36 @@ public class FPSMovement : MonoBehaviour
     public List<AudioClip> jumpAudioClips = new List<AudioClip>();
     public List<AudioClip> landAudioClips = new List<AudioClip>();
     public List<AudioClip> stepAudioClips = new List<AudioClip>();
-	public float speed = 10f;
+    public float walkingSpeed = 7f;
+	public float runningSpeed = 11f;
+    public float walkingFov = 60f;
+    public float runningFov = 70f;
     public float jumpForce = 1f;
 	public float sensitivity;
 
     //private
     private float sensitivityScale = 10f;
     private float footstepTimer = 0.0f;
-    private float footstepCooldown = 0.3f;
+    private float footstepCooldown = 2.5f;
     private bool isGrounded = true;
+    private Camera playerCamera = null;
     private AudioSource playerSource = null;
     private int myLastPlayedStepIndex = 0;
     private float distToGround = 0;
     private float landCooldown = 0.4f;
     private float landTimer = 0.0f;
+    private float speed = 0f;
 
 
     //Methods
 	void Start()
 	{
         playerSource = GameObject.FindWithTag("Player").GetComponent<AudioSource>();
+        playerCamera = gameObject.GetComponentInChildren<Camera>();
 		Cursor.lockState = CursorLockMode.Locked;
 		Cursor.visible = false;
         distToGround = gameObject.GetComponent<Collider>().bounds.extents.y;
+        speed = walkingSpeed;
 	}
 
     void FixedUpdate()
@@ -87,7 +94,7 @@ public class FPSMovement : MonoBehaviour
                     }
                     playerSource.PlayOneShot(stepAudioClips[randomizedIndex]);
                     myLastPlayedStepIndex = randomizedIndex;
-                    footstepTimer = footstepCooldown;
+                    footstepTimer = footstepCooldown / speed;
                 }
             }
         }
@@ -102,6 +109,35 @@ public class FPSMovement : MonoBehaviour
             landTimer = landCooldown;
             playerSource.PlayOneShot(jumpAudioClips[Random.Range(0, jumpAudioClips.Count)]);
         }
+        
+        if(isGrounded)
+        {
+            if (Input.GetButton("SprintButton"))
+            {
+                if(speed < runningSpeed)
+                {
+                    speed += 5f * Time.deltaTime;;
+                }
+                if(playerCamera.fieldOfView < runningFov)
+                {
+                    playerCamera.fieldOfView += 3f * Time.deltaTime;
+                }
+                Debug.Log("RUNNING");
+            }
+            else
+            {
+                if(speed > walkingSpeed)
+                {
+                    speed -= 10f * Time.deltaTime;
+                }
+                if(playerCamera.fieldOfView > walkingFov)
+                {
+                    playerCamera.fieldOfView -= 100f * Time.deltaTime;
+                }
+                Debug.Log("WALKING");
+            }
+        }
+
         if (!isGrounded && landTimer <= 0.0f)
         {
             if (Physics.Raycast(gameObject.transform.position, -Vector3.up, distToGround + 0.85f))
