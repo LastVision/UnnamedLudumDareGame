@@ -14,8 +14,8 @@ public class Elevator : MonoBehaviour
     private Vector3 RightDoorOrginalPosition;
 
     private Vector3 DoorClosedAxisValue = new Vector3(0, 0, 0.5f);
-
-    private float doorStateChangeTime = 0.0f;
+    private float elapsedTime = 0.0f;
+    private float transitionTime = 2.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -32,8 +32,9 @@ public class Elevator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float elapsedTime = Time.fixedTime - doorStateChangeTime;
-        float doorTransitionTime = Mathf.Max(elapsedTime, 1.0f);
+        elapsedTime += Time.fixedDeltaTime;
+        float doorTransitionTime = Mathf.Min(elapsedTime, transitionTime) / transitionTime;
+        print(doorTransitionTime);
         
         if(isOpen)
         {
@@ -50,12 +51,12 @@ public class Elevator : MonoBehaviour
     public void OpenDoor()
     {
         isOpen = true;
-        doorStateChangeTime = Time.fixedTime;
+        elapsedTime = 0.0f;
     }
 
     public void CloseDoor()
     {
         isOpen = false;
-        doorStateChangeTime = Time.fixedTime;
+        elapsedTime = 0.0f;
     }
 }
