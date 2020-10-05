@@ -8,25 +8,21 @@ public class CameraFader : MonoBehaviour
     public Image fadeImage;
     public void FadeToColor(Color color, float fadeTime)
     {
-        if (fadeImage)
-        {
-            fadeImage.color = color;
-            fadeImage.canvasRenderer.SetAlpha(0.0f);
-            fadeImage.CrossFadeAlpha(1.0f, fadeTime, false);
-        }
-        else
-        {
-            Debug.Log("Fade image is null");
-        }
+       FadeToColor(color, 0f, 1f, fadeTime);
     }
 
     public void FadeFromColor(Color color, float fadeTime)
     {
+        FadeToColor(color, 1f, 0f, fadeTime);
+    }
+
+    public void FadeToColor(Color color, float startAlpha, float endAlpha, float fadeTime)
+    {
         if (fadeImage)
         {
             fadeImage.color = color;
-            fadeImage.canvasRenderer.SetAlpha(1.0f);
-            fadeImage.CrossFadeAlpha(0.0f, fadeTime, false);
+            fadeImage.canvasRenderer.SetAlpha(startAlpha);
+            fadeImage.CrossFadeAlpha(endAlpha, fadeTime, false);
         }
         else
         {
