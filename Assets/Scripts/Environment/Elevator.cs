@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Elevator : MonoBehaviour
 {
+    [SerializeField]
+    public bool isOpen = true;
+
     private GameObject LeftDoor;
     private GameObject RightDoor;
 
@@ -12,7 +15,6 @@ public class Elevator : MonoBehaviour
 
     private Vector3 DoorClosedAxisValue = new Vector3(0, 0, 0.5f);
 
-    private bool isOpen = true;
     private float doorStateChangeTime = 0.0f;
 
     // Start is called before the first frame update
