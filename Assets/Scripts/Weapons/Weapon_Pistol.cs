@@ -20,12 +20,6 @@ public class Weapon_Pistol : Weapon_Base
                 healthComponent.Damage(Damage_internal);
             }
         }
-        
-        Vector3 dir = (hit.point - Camera.main.transform.position).normalized;
-        Vector3 start = Camera.main.transform.position + Camera.main.transform.up * -0.05f + Camera.main.transform.forward * 0.2f;
-        UtilityFunctions.DrawLine(start, hit.point, Color.green, 0.5f);
-
-
     }
 
     public override void Reload()
