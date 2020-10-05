@@ -16,6 +16,7 @@ public class EndOfLevelTrigger : MonoBehaviour
             return;
         }
 
+        GameObject.FindWithTag("Player").GetComponent<AudioSource>().Stop();
         GameObject.FindWithTag("Player").GetComponent<AudioSource>().PlayOneShot(VictorySound);
         Invoke("Endlevel", VictorySound.length);
     }
