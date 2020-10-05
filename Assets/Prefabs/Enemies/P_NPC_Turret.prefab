@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3840454909348197862}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.26, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -34,7 +34,7 @@ Transform:
   - {fileID: 55534360240420704}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1212477764382359440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50,9 +50,9 @@ MonoBehaviour:
   patrolPoints: []
   idleSound: {fileID: 0}
   aggroSound: {fileID: 0}
-  aggroRadius: 10
-  fireRate: 1
-  damage: 1
+  aggroRadius: 20
+  attacksPerSecond: 2
+  damage: 5
 --- !u!114 &8140989455616342935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80,10 +80,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.8
-  m_Height: 3.5
+  m_Radius: 1.4
+  m_Height: 3.83
   m_Direction: 1
-  m_Center: {x: 0, y: 1.67, z: 0}
+  m_Center: {x: 0, y: 1.67, z: -0.13}
 --- !u!1001 &526909378130350219
 PrefabInstance:
   m_ObjectHideFlags: 0

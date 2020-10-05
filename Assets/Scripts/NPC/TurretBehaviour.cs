@@ -7,9 +7,16 @@ public class TurretBehaviour : EnemyBehaviour
     [SerializeField]
     public float aggroRadius = 10.0f;
     [SerializeField]
-    public float fireRate = 1.0f;
+    public float attacksPerSecond = 1.0f;
+
     [SerializeField]
     public float damage = 1.0f;
+
+    private float timeSinceAttack = 0f; 
+    void Update ()
+    {
+        timeSinceAttack += Time.deltaTime;
+    }
     protected override void OnInit()
     {
         canPatrol = false;
@@ -40,8 +47,12 @@ public class TurretBehaviour : EnemyBehaviour
         }
 
         targetPoint = GetPlayerCoordinate();
-        //TODO: fire at player
         LookAtTarget();
+
+        if (timeSinceAttack > (1f / attacksPerSecond))
+        {
+            Attack();
+        }
     }
     protected override void OnDeath()
     {
@@ -66,5 +77,24 @@ public class TurretBehaviour : EnemyBehaviour
         GameObject child = transform.GetChild(1).gameObject;
         
         child.transform.LookAt(2 * child.transform.position - targetPoint);
+    }
+
+    private void Attack()
+    {
+        GameObject child = transform.GetChild(1).gameObject;
+        
+        RaycastHit hit;
+        int layerMaskAll = ~0;
+
+        if (Physics.Raycast(child.transform.position, -child.transform.forward, out hit, 20, layerMaskAll))
+        {
+            var healthComponent = hit.transform.gameObject.GetComponent<Health>();
+            if (healthComponent)
+            {
+                healthComponent.Damage(damage);
+            }
+        }
+
+        timeSinceAttack = 0f;
     }
 }
