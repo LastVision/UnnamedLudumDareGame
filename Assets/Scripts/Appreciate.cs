@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Appreciate : MonoBehaviour
 {
     public List<AudioClip> AppreciateAudioClips = new List<AudioClip>();
+    public List<AudioClip> MusicStrikeAudioClips = new List<AudioClip>();
     public GameObject UIHand = null;
     public GameObject AppreciateMusic = null;
     private int myLastPlayedAppreciateIndex = 0;
@@ -59,7 +60,7 @@ public class Appreciate : MonoBehaviour
             }
             else
             {
-                Debug.Log("TODO STRIKE");
+                gameObject.GetComponent<Strikes>().ReceiveStrike(MusicStrikeAudioClips[Random.Range(0, MusicStrikeAudioClips.Count - 1)]);
                 AppreciateMusic.GetComponent<RawImage>().enabled = false;
                 myHaveToAppreciateMusicTimer = 0.0f;
                 myHaveToAppreciateMusic = false;

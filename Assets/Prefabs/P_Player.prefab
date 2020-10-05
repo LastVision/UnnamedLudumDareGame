@@ -245,6 +245,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: db1c184fe95120f479c9764f3a06edc9, type: 3}
   - {fileID: 8300000, guid: c50ba9eca996a6a4c831640bb8edfdb4, type: 3}
   - {fileID: 8300000, guid: 59326e76b7f9b1c42a82f98190540e80, type: 3}
+  MusicStrikeAudioClips:
+  - {fileID: 8300000, guid: 1914df0cdee3b2f45a81a87712d446a9, type: 3}
+  - {fileID: 8300000, guid: fd9ff2d9002749145afc9f18b8b8bd96, type: 3}
+  - {fileID: 8300000, guid: 77102e7e5b97d7b48bcfbc31c699adb1, type: 3}
+  - {fileID: 8300000, guid: ca1d03b0aa2068a44890a530a401ff8e, type: 3}
   UIHand: {fileID: 0}
   AppreciateMusic: {fileID: 0}
 --- !u!82 &6890718403117099219
