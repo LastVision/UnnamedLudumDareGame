@@ -66,11 +66,6 @@ public class KamikazeBehaviour : EnemyBehaviour
         }
     }
 
-    protected override void OnDeath()
-    {
-        GetComponentInChildren<MeshRenderer>().enabled = false;  
-    }
-
     private void MoveToTargetPoint()
     {
         velocity = ((targetPoint - transform.position).normalized) * movementSpeed;
@@ -112,9 +107,22 @@ public class KamikazeBehaviour : EnemyBehaviour
         return point;
     }
 
-    override public void Kill()
+    public override void Kill()
     {
         Explode();
         base.Kill();
     }
+    protected override void OnDeath()
+    {
+        var child = transform.GetChild(0);
+        if (child)
+        {
+            Destroy(transform.GetChild(0).gameObject);
+        }
+        gameObject.GetComponent<CapsuleCollider>().enabled = false; 
+        gameObject.GetComponent<AudioSource>().enabled = false; 
+
+        base.OnDeath();
+    }
+
 }
