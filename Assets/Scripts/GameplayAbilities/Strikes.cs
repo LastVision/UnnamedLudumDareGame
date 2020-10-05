@@ -11,14 +11,7 @@ public class Strikes : MonoBehaviour
     int NbrOfStrikes = 0;
     int MaxStrikes = 3;
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            ReceiveStrike();
-        }
-    }
-    void ReceiveStrike()
+    public void ReceiveStrike()
     {
         ++NbrOfStrikes;
         if (NbrOfStrikes > MaxStrikes)
