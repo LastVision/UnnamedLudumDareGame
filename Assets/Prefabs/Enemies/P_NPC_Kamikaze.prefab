@@ -181,6 +181,8 @@ MonoBehaviour:
   InvincibilityTime: 0
   DisplayHealth: {fileID: 0}
   hurtSounds: []
+  deathSound: {fileID: 8300000, guid: 1fa3a2c04b84e204ea2b856f705ec6ff, type: 3}
+  combatCooldown: 0
 --- !u!136 &2413979153447241305
 CapsuleCollider:
   m_ObjectHideFlags: 0

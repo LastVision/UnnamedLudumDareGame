@@ -29,16 +29,26 @@ public class Strikes : MonoBehaviour
                 gameObject.GetComponent<AudioSource>().PlayOneShot(StrikeSounds[NbrOfStrikes - 1]);
                 strikeSoundTimer = 0;
                 strikeSoundShouldPlay = false;
+                if (NbrOfStrikes > MaxStrikes)
+                {
+                    OneTooMany();
+                }
             }
         }
     }
     public void ReceiveStrike(AudioClip strikeSound)
     {
         ++NbrOfStrikes;
-        
-        if (NbrOfStrikes > MaxStrikes)
+        if (NbrOfStrikes >= MaxStrikes)
         {
             OneTooMany();
+            if (UI_Anchor && UI_Strike_Icon)
+        {
+            float width = UI_Strike_Icon.GetComponent<RectTransform>().rect.width;
+            var strike = Instantiate(UI_Strike_Icon, Vector3.zero, Quaternion.identity);
+            strike.transform.parent = UI_Anchor.transform;
+            strike.transform.localPosition = Vector3.right * width * (NbrOfStrikes - 1);
+        }
         }
         else if (UI_Anchor && UI_Strike_Icon)
         {
@@ -56,8 +66,9 @@ public class Strikes : MonoBehaviour
 
     void OneTooMany()
     {
-        gameObject.GetComponent<CameraFader>().FadeToColor(Color.black, 2.5f);
-        Invoke("ReloadLevel", 2.5f);
+        gameObject.GetComponent<AudioSource>().Stop();
+        gameObject.GetComponent<AudioSource>().PlayOneShot(StrikeSounds[StrikeSounds.Count - 1]);
+        gameObject.SendMessage("Kill", StrikeSounds[StrikeSounds.Count - 1].length);
     }
 
     void ReloadLevel()

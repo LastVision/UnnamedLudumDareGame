@@ -11,6 +11,7 @@ public class TurretBehaviour : EnemyBehaviour
 
     [SerializeField]
     public float damage = 1.0f;
+    public List<AudioClip> myFireSounds;
 
     private float timeSinceAttack = 0f; 
     void Update ()
@@ -85,6 +86,7 @@ public class TurretBehaviour : EnemyBehaviour
         
         RaycastHit hit;
         int layerMaskAll = ~0;
+        gameObject.GetComponent<AudioSource>().PlayOneShot(myFireSounds[Random.Range(0, myFireSounds.Count - 1)]);
 
         if (Physics.Raycast(child.transform.position, -child.transform.forward, out hit, 20, layerMaskAll))
         {

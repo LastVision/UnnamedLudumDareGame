@@ -18,7 +18,9 @@ public class PlayerMain : MonoBehaviour
         Invoke("ReloadLevel", delay);
         gameObject.GetComponent<FPSMovement>().enabled = false;
         gameObject.GetComponent<WeildingGun>().enabled = false; 
+        gameObject.GetComponent<Health>().enabled = false;
     }
+
     void ReloadLevel()
     {
         SceneManager.LoadScene("Level");
