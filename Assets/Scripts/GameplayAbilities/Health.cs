@@ -12,6 +12,7 @@ public class Health : MonoBehaviour
     private float CurrentHP;
     public Text DisplayHealth;
     public List<AudioClip> hurtSounds = new List<AudioClip>();
+    public float combatCooldown;
     void Start()
     {
         CurrentHP = MaxHP;
@@ -21,7 +22,7 @@ public class Health : MonoBehaviour
     {
         TimeSinceDamage += Time.deltaTime;
 
-        if (CurrentHP < MaxHP && CurrentHP > 0f)
+        if (CurrentHP < MaxHP && CurrentHP > 0f && TimeSinceDamage > combatCooldown)
         {
             CurrentHP += HPRegenPerSec * Time.deltaTime;
             CurrentHP = Mathf.Min(CurrentHP, MaxHP);
