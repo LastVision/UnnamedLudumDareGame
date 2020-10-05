@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Appreciate : MonoBehaviour
 {
     public List<AudioClip> AppreciateAudioClips = new List<AudioClip>();
+    public List<AudioClip> GratefulAudioClips = new List<AudioClip>();
     public List<AudioClip> MusicStrikeAudioClips = new List<AudioClip>();
     public GameObject UIHand = null;
     public GameObject AppreciateMusic = null;
@@ -15,6 +16,8 @@ public class Appreciate : MonoBehaviour
     private bool myHaveToAppreciateMusic;
     private float myHaveToAppreciateMusicTimer;
     private float myHaveToAppreciateMusicDeadline = 5.0f;
+
+    private float myGratefulTimer = 0.0f;
     // Start is called before the first frame update
 
     void Start()
@@ -64,6 +67,15 @@ public class Appreciate : MonoBehaviour
                 AppreciateMusic.GetComponent<RawImage>().enabled = false;
                 myHaveToAppreciateMusicTimer = 0.0f;
                 myHaveToAppreciateMusic = false;
+            }
+        }
+        if (myGratefulTimer > 0)
+        {
+            myGratefulTimer -= Time.deltaTime;
+            if (myGratefulTimer <= 0)
+            {
+                myGratefulTimer = 0;
+                GameObject.FindWithTag("Player").GetComponent<AudioSource>().PlayOneShot(GratefulAudioClips[Random.Range(0, GratefulAudioClips.Count - 1)]);
             }
         }
     }
@@ -122,7 +134,9 @@ public class Appreciate : MonoBehaviour
                 randomizedIndex++;
             }
         }
+        GameObject.FindWithTag("Player").GetComponent<AudioSource>().Stop();
         audioData.PlayOneShot(AppreciateAudioClips[randomizedIndex]);
+        myGratefulTimer = 0.5f;;
         myLastPlayedAppreciateIndex = randomizedIndex;
         myAppreciatingCooldownTimer = myAppreciateCooldown;
                 if (UIHand != null)

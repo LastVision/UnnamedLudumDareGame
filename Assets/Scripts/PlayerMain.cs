@@ -12,10 +12,10 @@ public class PlayerMain : MonoBehaviour
         CameraFader.FadeFromColor(Color.black, 1f);
     }
 
-    void Kill()
+    void Kill(float delay)
     {
-        CameraFader.FadeToColor(Color.black, 2.5f);
-        Invoke("ReloadLevel", 2.5f);
+        CameraFader.FadeToColor(Color.black, delay);
+        Invoke("ReloadLevel", delay);
         gameObject.GetComponent<FPSMovement>().enabled = false;
         gameObject.GetComponent<WeildingGun>().enabled = false; 
     }

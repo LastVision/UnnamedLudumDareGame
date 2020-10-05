@@ -12,6 +12,7 @@ public class Health : MonoBehaviour
     private float CurrentHP;
     public Text DisplayHealth;
     public List<AudioClip> hurtSounds = new List<AudioClip>();
+    public AudioClip deathSound;
     public float combatCooldown;
     void Start()
     {
@@ -55,7 +56,9 @@ public class Health : MonoBehaviour
 
         if (CurrentHP <= 0f)
         {
-            gameObject.SendMessage("Kill");
+            gameObject.GetComponent<AudioSource>().Stop();
+            gameObject.GetComponent<AudioSource>().PlayOneShot(deathSound);
+            gameObject.SendMessage("Kill", deathSound.length);
         }
     }
 }
