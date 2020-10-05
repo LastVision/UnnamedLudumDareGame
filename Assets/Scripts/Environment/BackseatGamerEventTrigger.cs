@@ -20,6 +20,8 @@ public class BackseatGamerEventTrigger : MonoBehaviour
     public ECondition Condition;
     public List<AudioClip> StrikeSounds;
     private bool HasMetCondition = false;
+
+    bool StrikeGiven = false;
     void OnTriggerEnter(Collider collider)
     {
         if (collider.tag != "Player")
@@ -33,9 +35,11 @@ public class BackseatGamerEventTrigger : MonoBehaviour
         }
         else
         {
-            if (CostsStrikes)
+            if (CostsStrikes && !StrikeGiven)
             {
+
                 collider.gameObject.GetComponent<Strikes>().ReceiveStrike(StrikeSounds[Random.Range(0, StrikeSounds.Count - 1)]);
+				StrikeGiven = true;
             }
             if (DoorToLock)
             {
@@ -52,6 +56,8 @@ public class BackseatGamerEventTrigger : MonoBehaviour
             {
                 DoorToLock.GetComponent<Door>().Unlock();
             }
+
+            Debug.Log("Condition met");
         }
     }
 }
