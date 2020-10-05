@@ -61,7 +61,7 @@ public class EnemyBehaviour : MonoBehaviour
         }
     }
 
-    public void Kill()
+    virtual public void Kill()
     {
         ChangeState(STATE.DEAD, Time.fixedTime);
         OnDeath();

@@ -50,7 +50,6 @@ public abstract class Weapon_Base : MonoBehaviour
             if (ReloadTimer >= ReloadCooldown / 4.0f)
             {
                 gameObject.transform.localRotation = Quaternion.Lerp(gameObject.transform.localRotation, TargetReloadRotation, 0.025f);
-                Debug.Log("Hello");
             }
             else
             {

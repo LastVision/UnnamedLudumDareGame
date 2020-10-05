@@ -32,7 +32,7 @@ public class Ammo_Rocket : MonoBehaviour
 
     private void Explode()
     {
-        //gameObject.GetComponent<AudioSource>().PlayOneShot(explosionSounds[Random.Range(0, explosionSounds.Count - 1)]);
+        
         AudioSource.PlayClipAtPoint(explosionSounds[Random.Range(0, explosionSounds.Count - 1)], this.gameObject.transform.position);
 
         var go = Instantiate (ExplosionObject, transform.position, Quaternion.identity) as GameObject;

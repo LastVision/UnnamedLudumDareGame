@@ -274,7 +274,7 @@ MonoBehaviour:
   MuzzlePosition: {fileID: 7062711844507269160}
   HandlePosition: {fileID: 7062711844118239362}
   TargetReloadRotation: {x: 0.4619398, y: -0.19134179, z: -0.33141363, w: -0.8001031}
-  Damage: 0
+  Damage: 10
   fireSounds:
   - {fileID: 8300000, guid: d93edb6ed93ad8c49af3c41eb2c89315, type: 3}
   - {fileID: 8300000, guid: 21c1f4159420c734183491cb6c0b0390, type: 3}

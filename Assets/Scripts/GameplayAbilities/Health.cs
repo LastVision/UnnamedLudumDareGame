@@ -44,7 +44,10 @@ public class Health : MonoBehaviour
         }
 
         CurrentHP -= Damage;
-        GameObject.FindWithTag("Player").GetComponent<AudioSource>().PlayOneShot(hurtSounds[Random.Range(0, hurtSounds.Count - 1)]);
+        if (hurtSounds.Count > 0)
+        {
+            GameObject.FindWithTag("Player").GetComponent<AudioSource>().PlayOneShot(hurtSounds[Random.Range(0, hurtSounds.Count - 1)]);
+        }
         CurrentHP = Mathf.Max(CurrentHP, 0f);
         TimeSinceDamage = 0f;
 
