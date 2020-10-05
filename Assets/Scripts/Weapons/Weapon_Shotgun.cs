@@ -12,16 +12,15 @@ public class Weapon_Shotgun : Weapon_Base
         int layerMaskAll = ~0;
 
 
-        for (int i = 0; i < 40; ++i)
+        for (int i = 0; i < 30; ++i)
         {
-            Vector3 dir = (Camera.main.transform.forward * 2f + Random.insideUnitSphere).normalized;
+            Vector3 dir = (Camera.main.transform.forward * 5f + Random.insideUnitSphere).normalized;
 
-            if (Physics.Raycast(Camera.main.transform.position, dir, out hit, Mathf.Infinity, layerMaskAll))
+            if (Physics.Raycast(Camera.main.transform.position, dir, out hit, 10, layerMaskAll))
             {
                 var healthComponent = hit.transform.gameObject.GetComponent<Health>();
                 if (healthComponent)
                 {
-                    Debug.Log("hit");
                     healthComponent.Damage(Damage_internal);
                 }
             }

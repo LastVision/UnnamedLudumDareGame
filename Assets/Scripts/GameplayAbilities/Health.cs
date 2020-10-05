@@ -34,10 +34,11 @@ public class Health : MonoBehaviour
     }
     public void Damage(float Damage)
     {
-        if (CurrentHP < 0f)
+        if (CurrentHP <= 0f)
         {
             return;
         }
+
         if (TimeSinceDamage < InvincibilityTime)
         {
             return;
@@ -46,7 +47,7 @@ public class Health : MonoBehaviour
         CurrentHP -= Damage;
         if (hurtSounds.Count > 0)
         {
-            GameObject.FindWithTag("Player").GetComponent<AudioSource>().PlayOneShot(hurtSounds[Random.Range(0, hurtSounds.Count - 1)]);
+            gameObject.GetComponent<AudioSource>().PlayOneShot(hurtSounds[Random.Range(0, hurtSounds.Count - 1)]);
         }
         CurrentHP = Mathf.Max(CurrentHP, 0f);
         TimeSinceDamage = 0f;
@@ -55,5 +56,6 @@ public class Health : MonoBehaviour
         {
             gameObject.SendMessage("Kill");
         }
+        Debug.Log(CurrentHP);
     }
 }

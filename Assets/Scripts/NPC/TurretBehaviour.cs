@@ -43,13 +43,24 @@ public class TurretBehaviour : EnemyBehaviour
         //TODO: fire at player
         LookAtTarget();
     }
-
     protected override void OnDeath()
     {
-        Debug.Log("I AM A DEAD TURRET!");
-        GetComponentInChildren<MeshRenderer>().enabled = false;
-    }
+        var child = transform.GetChild(0);
+        if (child)
+        {
+            Destroy(transform.GetChild(0).gameObject);
+        }
 
+        child = transform.GetChild(1);
+        if (child)
+        {
+            Destroy(transform.GetChild(1).gameObject);
+        }
+
+        gameObject.GetComponent<CapsuleCollider>().enabled = false; 
+
+        base.OnDeath();
+    }
     private void LookAtTarget()
     {
         GameObject child = transform.GetChild(1).gameObject;

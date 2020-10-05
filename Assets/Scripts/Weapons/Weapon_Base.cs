@@ -43,7 +43,7 @@ public abstract class Weapon_Base : MonoBehaviour
         TargetReloadRotation_Internal = TargetReloadRotation;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (ReloadTimer > 0.0f) // Reload
         {
