@@ -57,19 +57,6 @@ public class FPSMovement : MonoBehaviour
         var move = (forwardDir * Input.GetAxis("Vertical") + cam.transform.right * Input.GetAxis("Horizontal")).normalized;
         transform.Translate(move * speed * Time.deltaTime, Space.World);
 
-
-        // Cursor code
-		if (Input.GetKeyDown(KeyCode.Escape))
-		{
-			Cursor.lockState = CursorLockMode.None;
-			Cursor.visible = true;
-		}
-
-		if (Cursor.visible && Input.GetMouseButtonDown(1))
-		{
-			Cursor.lockState = CursorLockMode.Locked;
-			Cursor.visible = false;
-		}
         if (isGrounded)
         {
             if (footstepTimer > 0.0f)
@@ -122,7 +109,6 @@ public class FPSMovement : MonoBehaviour
                 {
                     playerCamera.fieldOfView += 3f * Time.deltaTime;
                 }
-                Debug.Log("RUNNING");
             }
             else
             {
@@ -134,7 +120,6 @@ public class FPSMovement : MonoBehaviour
                 {
                     playerCamera.fieldOfView -= 100f * Time.deltaTime;
                 }
-                Debug.Log("WALKING");
             }
         }
 
