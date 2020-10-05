@@ -18,6 +18,7 @@ public class BackseatGamerEventTrigger : MonoBehaviour
     public bool CostsStrikes = true;
     public GameObject DoorToLock;
     public ECondition Condition;
+    public List<AudioClip> StrikeSounds;
     private bool HasMetCondition = false;
     void OnTriggerEnter(Collider collider)
     {
@@ -34,7 +35,7 @@ public class BackseatGamerEventTrigger : MonoBehaviour
         {
             if (CostsStrikes)
             {
-                collider.gameObject.GetComponent<Strikes>().ReceiveStrike();
+                collider.gameObject.GetComponent<Strikes>().ReceiveStrike(StrikeSounds[Random.Range(0, StrikeSounds.Count - 1)]);
             }
             if (DoorToLock)
             {
