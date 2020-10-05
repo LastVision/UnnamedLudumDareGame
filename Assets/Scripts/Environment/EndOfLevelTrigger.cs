@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class EndOfLevelTrigger : MonoBehaviour
 {
-
+    public AudioClip VictorySound;
     public CameraFader CameraFader;
     public string NextLevel;
 
@@ -16,7 +16,8 @@ public class EndOfLevelTrigger : MonoBehaviour
             return;
         }
 
-        Invoke("Endlevel", 3f);
+        GameObject.FindWithTag("Player").GetComponent<AudioSource>().PlayOneShot(VictorySound);
+        Invoke("Endlevel", VictorySound.length);
     }
 
 
