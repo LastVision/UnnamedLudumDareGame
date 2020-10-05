@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerMain : MonoBehaviour
 {
     public CameraFader CameraFader;
+    private bool doingRestartForFallingInVoid = false;
 
     void Start()
     {
@@ -24,5 +25,14 @@ public class PlayerMain : MonoBehaviour
     void ReloadLevel()
     {
         SceneManager.LoadScene("Level");
+    }
+
+    void Update()
+    {
+        if(transform.position.y < -100 && doingRestartForFallingInVoid == false)
+        {
+            doingRestartForFallingInVoid = true;
+            ReloadLevel();
+        }
     }
 }
