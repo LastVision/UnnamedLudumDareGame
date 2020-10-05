@@ -47,7 +47,10 @@ public class BackseatGamerEventTrigger : MonoBehaviour
         if (Condition == condition)
         {
             HasMetCondition = true;
-            DoorToLock.GetComponent<Door>().Unlock();
+            if (DoorToLock)
+            {
+                DoorToLock.GetComponent<Door>().Unlock();
+            }
         }
     }
 }
