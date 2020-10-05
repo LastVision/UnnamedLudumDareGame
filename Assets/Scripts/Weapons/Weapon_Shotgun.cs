@@ -14,9 +14,9 @@ public class Weapon_Shotgun : Weapon_Base
 
         for (int i = 0; i < 30; ++i)
         {
-            Vector3 dir = (Camera.main.transform.forward * 5f + Random.insideUnitSphere).normalized;
+            Vector3 dir = (Camera.main.transform.forward * 10f + Random.insideUnitSphere).normalized;
 
-            if (Physics.Raycast(Camera.main.transform.position, dir, out hit, 10, layerMaskAll))
+            if (Physics.Raycast(Camera.main.transform.position, dir, out hit, 20, layerMaskAll))
             {
                 var healthComponent = hit.transform.gameObject.GetComponent<Health>();
                 if (healthComponent)
