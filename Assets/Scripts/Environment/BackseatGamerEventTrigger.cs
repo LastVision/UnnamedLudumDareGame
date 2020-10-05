@@ -7,14 +7,10 @@ public enum ECondition
 {
     Pistol,
     Shotgun,
-    RocketLauncher
-}
-
-public enum EBackseaterState
-{
-    HasFailed,
-    HasSucceeded,
-    Neither
+    RocketLauncher,
+    PoI1,
+    PoI2,
+    Poi3
 }
 
 public class BackseatGamerEventTrigger : MonoBehaviour
@@ -23,7 +19,6 @@ public class BackseatGamerEventTrigger : MonoBehaviour
     public GameObject DoorToLock;
     public ECondition Condition;
     private bool HasMetCondition = false;
-    private EBackseaterState State = EBackseaterState.Neither;
     void OnTriggerEnter(Collider collider)
     {
         if (collider.tag != "Player")
