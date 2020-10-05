@@ -7,26 +7,44 @@ public class Strikes : MonoBehaviour
 {
     public GameObject UI_Strike_Icon;
     public GameObject UI_Anchor;
+    public List<AudioClip> StrikeSounds = new List<AudioClip>();
     
     int NbrOfStrikes = 0;
     int MaxStrikes = 3;
 
+    private bool strikeSoundShouldPlay = false;
+    private float strikeSoundTimer = 0;
+
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I))
+        if (strikeSoundShouldPlay)
         {
-            ReceiveStrike();
+            if (strikeSoundTimer > 0)
+            {
+                strikeSoundTimer -= Time.deltaTime;
+            }
+            else
+            {
+                gameObject.GetComponent<AudioSource>().PlayOneShot(StrikeSounds[NbrOfStrikes - 1]);
+                strikeSoundTimer = 0;
+                strikeSoundShouldPlay = false;
+            }
         }
     }
-    void ReceiveStrike()
+    public void ReceiveStrike(AudioClip strikeSound)
     {
         ++NbrOfStrikes;
+        
         if (NbrOfStrikes > MaxStrikes)
         {
             OneTooMany();
         }
         else if (UI_Anchor && UI_Strike_Icon)
         {
+            gameObject.GetComponent<AudioSource>().Stop();
+            gameObject.GetComponent<AudioSource>().PlayOneShot(strikeSound);
+            strikeSoundTimer = strikeSound.length + 0.5f;
+            strikeSoundShouldPlay = true;
             float width = UI_Strike_Icon.GetComponent<RectTransform>().rect.width;
             var strike = Instantiate(UI_Strike_Icon, Vector3.zero, Quaternion.identity);
             strike.transform.parent = UI_Anchor.transform;

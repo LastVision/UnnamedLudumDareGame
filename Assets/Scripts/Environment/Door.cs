@@ -11,6 +11,9 @@ public class Door : MonoBehaviour
 
     public AudioClip OpenDoorSound;
     public AudioClip CloseDoorSound;
+    public List<AudioClip> TooFastSounds;
+    public bool ShouldStrikePlayer;
+    public bool ShouldPlayStrikeSound;
     private Vector3 myTargetPosition;
 
     private Material DoorMaterial;
@@ -48,6 +51,18 @@ public class Door : MonoBehaviour
         if (!IsLocked)
         {
             Open();
+        }
+        else if (ShouldPlayStrikeSound)
+        {
+            if (ShouldStrikePlayer)
+            {
+                GameObject.FindWithTag("Player").GetComponent<Strikes>().ReceiveStrike(TooFastSounds[Random.Range(0, TooFastSounds.Count - 1)]);
+            }
+            else
+            {
+                GameObject.FindWithTag("Player").GetComponent<AudioSource>().Stop();
+                GameObject.FindWithTag("Player").GetComponent<AudioSource>().PlayOneShot(TooFastSounds[Random.Range(0, TooFastSounds.Count - 1)]);
+            }
         }
     }
     private void Open()
