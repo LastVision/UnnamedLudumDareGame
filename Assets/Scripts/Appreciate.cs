@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class Appreciate : MonoBehaviour
 {
     public List<AudioClip> AppreciateAudioClips = new List<AudioClip>();
+    public List<AudioClip> GratefulAudioClips = new List<AudioClip>();
+    public List<AudioClip> MusicStrikeAudioClips = new List<AudioClip>();
     public GameObject UIHand = null;
     public GameObject AppreciateMusic = null;
     private int myLastPlayedAppreciateIndex = 0;
@@ -14,6 +16,8 @@ public class Appreciate : MonoBehaviour
     private bool myHaveToAppreciateMusic;
     private float myHaveToAppreciateMusicTimer;
     private float myHaveToAppreciateMusicDeadline = 5.0f;
+
+    private float myGratefulTimer = 0.0f;
     // Start is called before the first frame update
 
     void Start()
@@ -59,33 +63,31 @@ public class Appreciate : MonoBehaviour
             }
             else
             {
-                Debug.Log("TODO STRIKE");
+                gameObject.GetComponent<Strikes>().ReceiveStrike(MusicStrikeAudioClips[Random.Range(0, MusicStrikeAudioClips.Count - 1)]);
                 AppreciateMusic.GetComponent<RawImage>().enabled = false;
                 myHaveToAppreciateMusicTimer = 0.0f;
                 myHaveToAppreciateMusic = false;
+            }
+        }
+        if (myGratefulTimer > 0)
+        {
+            myGratefulTimer -= Time.deltaTime;
+            if (myGratefulTimer <= 0)
+            {
+                myGratefulTimer = 0;
+                GameObject.FindWithTag("Player").GetComponent<AudioSource>().PlayOneShot(GratefulAudioClips[Random.Range(0, GratefulAudioClips.Count - 1)]);
             }
         }
     }
 
     public void TryToAppreciate()
     {
-
         int layerMaskAll = ~0;
 
         RaycastHit hit;
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, Mathf.Infinity, layerMaskAll))
         {
-            Vector3 dir = (hit.point - Camera.main.transform.position).normalized;
-            Vector3 start = Camera.main.transform.position + Camera.main.transform.up * -0.05f + dir * 0.2f;
-            UtilityFunctions.DrawLine(start, hit.point, Color.yellow, 1.5f);
             AppreciateObject(hit.collider.gameObject);
-        }
-        else
-        {
-            Vector3 dir = Camera.main.transform.forward;
-            Vector3 start = Camera.main.transform.position + Camera.main.transform.up * -0.05f + dir * 0.2f;
-            UtilityFunctions.DrawLine(start, dir * 1000f, Color.white, 1.5f);
-            Debug.Log("Did not Hit");
         }
     }
 
@@ -132,7 +134,9 @@ public class Appreciate : MonoBehaviour
                 randomizedIndex++;
             }
         }
+        GameObject.FindWithTag("Player").GetComponent<AudioSource>().Stop();
         audioData.PlayOneShot(AppreciateAudioClips[randomizedIndex]);
+        myGratefulTimer = 0.5f;;
         myLastPlayedAppreciateIndex = randomizedIndex;
         myAppreciatingCooldownTimer = myAppreciateCooldown;
                 if (UIHand != null)

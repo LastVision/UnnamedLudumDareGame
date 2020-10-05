@@ -245,6 +245,21 @@ MonoBehaviour:
   - {fileID: 8300000, guid: db1c184fe95120f479c9764f3a06edc9, type: 3}
   - {fileID: 8300000, guid: c50ba9eca996a6a4c831640bb8edfdb4, type: 3}
   - {fileID: 8300000, guid: 59326e76b7f9b1c42a82f98190540e80, type: 3}
+  GratefulAudioClips:
+  - {fileID: 8300000, guid: 0df44adc75f16394ba454f2f4405765e, type: 3}
+  - {fileID: 8300000, guid: c58b9a34456c11c43baddec2e40298f3, type: 3}
+  - {fileID: 8300000, guid: 81f74bf61890066498a3182b25241f79, type: 3}
+  - {fileID: 8300000, guid: cae910e7c0f0ee2428832365146b478d, type: 3}
+  - {fileID: 8300000, guid: 0a05d4a592db813419e28b600fef2026, type: 3}
+  - {fileID: 8300000, guid: 498d11bef64fe6a42be617aa1a8e4b8b, type: 3}
+  - {fileID: 8300000, guid: 39d281f4165e7bb4db202ceccaf09046, type: 3}
+  - {fileID: 8300000, guid: 2813f19ae7633ad4ea34b451c21864f8, type: 3}
+  - {fileID: 8300000, guid: 0d3b549cab06cd84d96c599b8bde2b03, type: 3}
+  MusicStrikeAudioClips:
+  - {fileID: 8300000, guid: 1914df0cdee3b2f45a81a87712d446a9, type: 3}
+  - {fileID: 8300000, guid: fd9ff2d9002749145afc9f18b8b8bd96, type: 3}
+  - {fileID: 8300000, guid: 77102e7e5b97d7b48bcfbc31c699adb1, type: 3}
+  - {fileID: 8300000, guid: ca1d03b0aa2068a44890a530a401ff8e, type: 3}
   UIHand: {fileID: 0}
   AppreciateMusic: {fileID: 0}
 --- !u!82 &6890718403117099219
@@ -413,6 +428,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a92e7ab6aaf0d6f478d1d84e01cbb487, type: 3}
   - {fileID: 8300000, guid: 3e564665ce0d41c4b899af30b71d974d, type: 3}
   - {fileID: 8300000, guid: e4157109d3e99c84b898b363f523e484, type: 3}
+  deathSound: {fileID: 8300000, guid: 82f996eadb7b0564daf15c394898dadd, type: 3}
   combatCooldown: 2
 --- !u!114 &5495819825533504831
 MonoBehaviour:
