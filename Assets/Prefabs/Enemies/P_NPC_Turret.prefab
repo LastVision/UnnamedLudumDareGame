@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2271804549201740432}
   - component: {fileID: 1212477764382359440}
+  - component: {fileID: 8140989455616342935}
   m_Layer: 0
   m_Name: P_NPC_Turret
   m_TagString: Enemy
@@ -51,6 +52,23 @@ MonoBehaviour:
   aggroRadius: 10
   fireRate: 1
   damage: 1
+--- !u!114 &8140989455616342935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3840454909348197862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c571b7427fc35294d8f71803dadc49bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHP: 80
+  HPRegenPerSec: 0
+  InvincibilityTime: 0
+  DisplayHealth: {fileID: 0}
+  hurtSounds: []
 --- !u!1001 &526909378130350219
 PrefabInstance:
   m_ObjectHideFlags: 0

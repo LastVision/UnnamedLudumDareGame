@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 611254574138894242}
   - component: {fileID: 2634059471742533055}
+  - component: {fileID: 4846512823157572638}
   m_Layer: 0
   m_Name: P_NPC_Spawner
   m_TagString: Untagged
@@ -45,3 +46,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: {fileID: 0}
   PatrolPoints: []
+--- !u!114 &4846512823157572638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8153609123257874845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b52ca8057aea8644a07a8f02c19e5ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  color: {r: 1, g: 0, b: 0, a: 0.5019608}

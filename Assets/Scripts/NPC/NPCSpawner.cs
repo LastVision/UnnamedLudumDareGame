@@ -11,7 +11,7 @@ public class NPCSpawner : MonoBehaviour
 
     private GameObject spawnedNpc;
     private bool hasSpawnedNpc = false;
-    void Spawn()
+    public void Spawn()
     {
         if(hasSpawnedNpc)
         {
@@ -32,7 +32,7 @@ public class NPCSpawner : MonoBehaviour
         hasSpawnedNpc = true;
     }
 
-    void Reset()
+    public void Reset()
     {
         if(spawnedNpc)
         {
@@ -41,8 +41,8 @@ public class NPCSpawner : MonoBehaviour
         hasSpawnedNpc = false;
     }
 
-    void Start()
+    public bool HasSpawned()
     {
-        Spawn();
+        return hasSpawnedNpc;
     }
 }

@@ -49,11 +49,11 @@ MonoBehaviour:
   patrolPoints: []
   idleSound: {fileID: 8300000, guid: 88019aa9369d7064eabc91cd067a40f0, type: 3}
   aggroSound: {fileID: 8300000, guid: 96aab5519a6d6344386ca496fc9d7b9f, type: 3}
-  aggroRadius: 3
-  attackRadius: 1
-  explosionRadius: 2
+  aggroRadius: 10
+  attackRadius: 6
+  explosionRadius: 3
   explosionDamage: 1
-  movementSpeed: 10
+  movementSpeed: 5
   explosionParticleGameObject: {fileID: 5207450708071276621, guid: 6553bace1507c1941ad2d999015b782b, type: 3}
 --- !u!82 &-9209659837878219100
 AudioSource:
@@ -174,7 +174,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHP: 80
   HPRegenPerSec: 0
+  InvincibilityTime: 0
   DisplayHealth: {fileID: 0}
+  hurtSounds: []
 --- !u!1001 &6863073369932651685
 PrefabInstance:
   m_ObjectHideFlags: 0
