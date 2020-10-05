@@ -39,7 +39,7 @@ public class Door : MonoBehaviour
     {
         if (Vector3.Distance(DoorModel.transform.localPosition, myTargetPosition) > 0.01f)
         {
-            DoorModel.transform.localPosition = Vector3.Lerp(DoorModel.transform.localPosition, myTargetPosition, 0.01f);
+            DoorModel.transform.localPosition = Vector3.Lerp(DoorModel.transform.localPosition, myTargetPosition, 0.02f);
         }
     }
 
