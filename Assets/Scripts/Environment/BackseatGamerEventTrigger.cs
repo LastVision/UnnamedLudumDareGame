@@ -32,6 +32,10 @@ public class BackseatGamerEventTrigger : MonoBehaviour
         }
         else
         {
+            if (CostsStrikes)
+            {
+                collider.gameObject.GetComponent<Strikes>().ReceiveStrike();
+            }
             if (DoorToLock)
             {
                 DoorToLock.GetComponent<Door>().Lock();
@@ -43,7 +47,10 @@ public class BackseatGamerEventTrigger : MonoBehaviour
         if (Condition == condition)
         {
             HasMetCondition = true;
-            DoorToLock.GetComponent<Door>().Unlock();
+            if (DoorToLock)
+            {
+                DoorToLock.GetComponent<Door>().Unlock();
+            }
         }
     }
 }

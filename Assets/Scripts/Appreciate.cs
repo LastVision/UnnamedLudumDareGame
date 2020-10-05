@@ -96,7 +96,11 @@ public class Appreciate : MonoBehaviour
 
     private void AppreciateObject(GameObject foundObject)
     {
-        // Todo put actual thing here for objects of interest
+        var a = foundObject.GetComponent<Appreciateable>();
+        if (a)
+        {
+            a.Appreciate();
+        }
         TriggerAppreciationEffect();
     }
 
