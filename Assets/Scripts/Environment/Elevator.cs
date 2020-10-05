@@ -34,7 +34,6 @@ public class Elevator : MonoBehaviour
     {
         elapsedTime += Time.fixedDeltaTime;
         float doorTransitionTime = Mathf.Min(elapsedTime, transitionTime) / transitionTime;
-        print(doorTransitionTime);
         
         if(isOpen)
         {

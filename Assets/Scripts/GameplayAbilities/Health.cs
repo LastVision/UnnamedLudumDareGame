@@ -57,6 +57,5 @@ public class Health : MonoBehaviour
         {
             gameObject.SendMessage("Kill");
         }
-        Debug.Log(CurrentHP);
     }
 }

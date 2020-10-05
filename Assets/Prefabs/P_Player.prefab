@@ -257,7 +257,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 8ee863273208326488314863202cdcb8, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -439,6 +439,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd155cb192aa82b44b41342b72c3b4bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UI_Strike_Icon: {fileID: 9185088967760088395, guid: a70887db5492ad34c97caefb5a4ed2e1,
-    type: 3}
+  UI_Strike_Icon: {fileID: 9185088967760088395, guid: a70887db5492ad34c97caefb5a4ed2e1, type: 3}
   UI_Anchor: {fileID: 0}
+  StrikeSounds:
+  - {fileID: 8300000, guid: a75b40dd2dd815343bcc5205c2a88d95, type: 3}
+  - {fileID: 8300000, guid: c8c686aea26910e41860fab485e34edc, type: 3}
+  - {fileID: 8300000, guid: dceba603c9b939d4291e88f7973e12fc, type: 3}

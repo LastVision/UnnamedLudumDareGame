@@ -69,20 +69,15 @@ public class Appreciate : MonoBehaviour
 
     public void TryToAppreciate()
     {
-        // Bit shift the index of the layer (8) to get a bit mask
-        int layerMask = 1 << 8;
 
-        // This would cast rays only against colliders in layer 8.
-        // But instead we want to collide against everything except layer 8. The ~ operator does this, it inverts a bitmask.
-        layerMask = ~layerMask;
+        int layerMaskAll = ~0;
 
         RaycastHit hit;
-        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, Mathf.Infinity, layerMask))
+        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, Mathf.Infinity, layerMaskAll))
         {
             Vector3 dir = (hit.point - Camera.main.transform.position).normalized;
             Vector3 start = Camera.main.transform.position + Camera.main.transform.up * -0.05f + dir * 0.2f;
             UtilityFunctions.DrawLine(start, hit.point, Color.yellow, 1.5f);
-            Debug.Log("Did Hit");
             AppreciateObject(hit.collider.gameObject);
         }
         else
@@ -96,12 +91,22 @@ public class Appreciate : MonoBehaviour
 
     private void AppreciateObject(GameObject foundObject)
     {
-        var a = foundObject.GetComponent<Appreciateable>();
-        if (a)
+        var ap = foundObject.GetComponent<Appreciateable>();
+        Appreciateable ap_parent = null;
+        if (foundObject.transform.parent)
         {
-            a.Appreciate();
+            ap_parent = foundObject.transform.parent.GetComponent<Appreciateable>();
         }
-        TriggerAppreciationEffect();
+        if (ap)
+        {
+            ap.Appreciate();
+            TriggerAppreciationEffect();
+        }
+        else if (ap_parent)
+        {
+            ap_parent.Appreciate();
+            TriggerAppreciationEffect();
+        }
     }
 
     private void AppreciateMusicFunction()
